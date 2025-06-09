@@ -1,31 +1,32 @@
-# 🎯 Cline Token Manager - Universal Context Optimizer
+# 🎯 Cline Token Manager - Essential Cline Enhancement
 
-> **Universal context optimization engine that reduces AI token usage by 76%**  
+> **THE missing piece for Cline users - reduce token usage by 76% and unlock Cline's full potential**  
 > **Author:** Joseph Kisler - Webwerkstatt
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://marketplace.visualstudio.com/)
+[![Cline](https://img.shields.io/badge/Cline-Compatible-green.svg)](https://github.com/cline/cline)
 
 🇬🇧 **English Version** | 🇩🇪 **[Deutsche Version](README_DE.md)**
 
-## 🚀 **What This Does**
+## 🚀 **Supercharge Your Cline Experience**
 
-Transform your AI coding experience from token-wasting to token-optimized:
+**For Cline power users who want to unlock maximum efficiency:**
 
-### **Before Cline Token Manager:**
+### **Your Cline Without Optimization:**
 ```
-❌ 200K+ tokens for simple tasks
-❌ $500+ monthly bills 
-❌ Context window constantly full
-❌ VS Code performance issues
+❌ Cline hits token limits constantly
+❌ $500+ monthly Anthropic bills 
+❌ Context window always full
+❌ Reduced Cline capabilities
 ```
 
-### **After Cline Token Manager:**
+### **Your Cline WITH Token Manager:**
 ```
-✅ 76% fewer tokens used
+✅ Cline works 76% more efficiently
 ✅ $200-800 monthly savings
-✅ Smart context optimization
-✅ Smooth VS Code performance
+✅ Never hit context limits
+✅ Unleash Cline's full potential
 ```
 
 ## ⚡ **Quick Start**
