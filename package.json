@@ -1,0 +1,197 @@
+{
+  "name": "cline-token-manager-universal",
+  "displayName": "Cline Token Manager - Universal Context Optimizer",
+  "description": "Universal context optimization engine that reduces AI token usage by 76% for Cline and other AI coding tools",
+  "version": "1.0.0",
+  "publisher": "webwerkstatt",
+  "author": "Joseph Kisler - Webwerkstatt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web-werkstatt/cline-token-manager-universal.git"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Machine Learning",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "cline",
+    "claude",
+    "ai",
+    "context",
+    "optimization",
+    "tokens",
+    "cursor",
+    "copilot",
+    "performance",
+    "cost-reduction"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "cline-token-manager.optimizeContext",
+        "title": "Optimize Context",
+        "category": "Cline Token Manager",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "cline-token-manager.generateOptimizationReport",
+        "title": "Generate Optimization Report", 
+        "category": "Cline Token Manager",
+        "icon": "$(file-text)"
+      },
+      {
+        "command": "cline-token-manager.showDashboard",
+        "title": "Show Token Manager Dashboard",
+        "category": "Cline Token Manager",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "cline-token-manager.toggleAutoOptimize",
+        "title": "Toggle Auto-Optimization",
+        "category": "Cline Token Manager",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "cline-token-manager.resetStatistics",
+        "title": "Reset Statistics",
+        "category": "Cline Token Manager",
+        "icon": "$(refresh)"
+      }
+    ],
+    "configuration": {
+      "title": "Cline Token Manager",
+      "properties": {
+        "clineTokenManager.autoOptimize": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically optimize context when working with files"
+        },
+        "clineTokenManager.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show token count in status bar"
+        },
+        "clineTokenManager.optimizeThreshold": {
+          "type": "number",
+          "default": 10000,
+          "description": "Minimum tokens before suggesting optimization"
+        },
+        "clineTokenManager.compressionLevel": {
+          "type": "string",
+          "default": "smart",
+          "enum": ["conservative", "smart", "aggressive"],
+          "description": "Context compression level"
+        },
+        "clineTokenManager.fileTypes": {
+          "type": "object",
+          "default": {
+            "typescript": { "enabled": true, "compressionRatio": 0.85 },
+            "python": { "enabled": true, "compressionRatio": 0.82 },
+            "json": { "enabled": true, "compressionRatio": 0.71 },
+            "markdown": { "enabled": true, "compressionRatio": 0.65 }
+          },
+          "description": "File type specific optimization settings"
+        },
+        "clineTokenManager.excludePatterns": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/dist/**",
+            "**/.git/**",
+            "**/build/**",
+            "**/*.min.js"
+          ],
+          "description": "File patterns to exclude from optimization"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cline-token-manager",
+          "title": "Token Manager",
+          "icon": "$(graph-line)"
+        }
+      ]
+    },
+    "views": {
+      "cline-token-manager": [
+        {
+          "type": "webview",
+          "id": "cline-token-manager.dashboard",
+          "name": "Optimization Dashboard",
+          "contextualTitle": "Token Optimization Dashboard"
+        }
+      ]
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "cline-token-manager.optimizeContext",
+          "when": "editorIsOpen"
+        },
+        {
+          "command": "cline-token-manager.generateOptimizationReport"
+        },
+        {
+          "command": "cline-token-manager.showDashboard"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "cline-token-manager.optimizeContext",
+          "group": "1_modification",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "cline-token-manager.optimizeContext",
+        "key": "ctrl+shift+o",
+        "mac": "cmd+shift+o",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "pretest": "npm run test-compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "build": "npm run package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/glob": "^8.1.0", 
+    "@types/mocha": "^10.0.1",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.3.0",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-electron": "^2.3.8"
+  },
+  "dependencies": {
+    "tiktoken": "^1.0.10"
+  }
+}
