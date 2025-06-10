@@ -13,6 +13,26 @@
 
 ---
 
+## 📦 **Download & Installation**
+
+### **Aktuelle Version:**
+**[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/cline-token-manager/releases/tag/v1.1.0-cline-v3.17.11)**
+- **Kompatibel**: Cline v3.17.11 + Claude Code bereit
+- **Features**: Universal Provider Support, 76% Token-Reduktion
+- **Größe**: 10.7 MB
+- **Status**: Produktionsbereit
+
+### **Schnelle Installation:**
+```bash
+1. Download cline-token-manager-v3.17.11-1.1.0.vsix
+2. VS Code öffnen
+3. Ctrl+Shift+P → "Extensions: Install from VSIX"
+4. Downloaded Datei auswählen
+5. VS Code neustarten → Fertig!
+```
+
+---
+
 ## 🚨 **Das Cache-Explosion Problem (Gelöst!)**
 
 ### **Was AI-Coding-Effizienz zerstört:**
