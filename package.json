@@ -143,6 +143,54 @@
         "title": "Optimize for Performance",
         "category": "Cline Token Manager",
         "icon": "$(zap)"
+      },
+      {
+        "command": "cline-token-manager.testPythonGateway",
+        "title": "Test Python Gateway",
+        "category": "Cline Token Manager",
+        "icon": "$(beaker)"
+      },
+      {
+        "command": "cline-token-manager.optimizeWithPython",
+        "title": "Optimize with Python Engine",
+        "category": "Cline Token Manager",
+        "icon": "$(symbol-class)"
+      },
+      {
+        "command": "cline-token-manager.showOptimizationStats",
+        "title": "Show Optimization Statistics", 
+        "category": "Cline Token Manager",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "cline-token-manager.pythonGatewayInfo",
+        "title": "Python Gateway Information",
+        "category": "Cline Token Manager",
+        "icon": "$(info)"
+      },
+      {
+        "command": "cline-token-manager.showAdminDashboard",
+        "title": "Admin Dashboard",
+        "category": "Cline Token Manager",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "cline-token-manager.systemHealthCheck",
+        "title": "System Health Check",
+        "category": "Cline Token Manager",
+        "icon": "$(pulse)"
+      },
+      {
+        "command": "cline-token-manager.exportAnalytics",
+        "title": "Export Analytics Data",
+        "category": "Cline Token Manager",
+        "icon": "$(export)"
+      },
+      {
+        "command": "cline-token-manager.businessIntelligence",
+        "title": "Business Intelligence Dashboard",
+        "category": "Cline Token Manager",
+        "icon": "$(chart)"
       }
     ],
     "configuration": {
