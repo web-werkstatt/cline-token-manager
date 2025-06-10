@@ -1,6 +1,9 @@
 import { TokenUsage, ContextWindow, ContextMessage } from '../../../shared/types';
 import { ConfigLoader } from '../../../config/config-loader';
 import { SmartFileCondenser } from '../smart-file-condenser';
+import { SmartContextManager } from '../smart-context-manager';
+import { ContextOptimizer } from '../context-optimizer';
+import { PromptSizeMonitor } from '../prompt-size-monitor';
 import * as vscode from 'vscode';
 
 export class TokenManager {
@@ -9,11 +12,21 @@ export class TokenManager {
   private currentWindow: ContextWindow;
   private configLoader: ConfigLoader;
   private smartFileCondenser: SmartFileCondenser;
+  private smartContextManager: SmartContextManager;
+  private contextOptimizer: ContextOptimizer;
+  private promptSizeMonitor: PromptSizeMonitor | null = null;
   private clineStoragePath: string | null = null;
 
-  private constructor() {
+  private constructor(context?: vscode.ExtensionContext) {
     this.configLoader = ConfigLoader.getInstance();
     this.smartFileCondenser = SmartFileCondenser.getInstance();
+    this.smartContextManager = SmartContextManager.getInstance();
+    this.contextOptimizer = new ContextOptimizer();
+    
+    if (context) {
+      this.promptSizeMonitor = PromptSizeMonitor.getInstance(context);
+    }
+    
     const config = this.configLoader.getConfig();
     
     this.currentWindow = {
@@ -90,7 +103,7 @@ export class TokenManager {
     }
   }
 
-  private async loadClineTokenData(): Promise<void> {
+  public async loadClineTokenData(): Promise<void> {
     if (!this.clineStoragePath) return;
     
     const previousTotal = this.getCurrentUsage().totalTokens;
@@ -101,7 +114,10 @@ export class TokenManager {
       
       const tasksPath = path.join(this.clineStoragePath, 'tasks');
       
-      if (!fs.existsSync(tasksPath)) return;
+      if (!fs.existsSync(tasksPath)) {
+        console.log('🔧 TokenManager: Tasks directory not found at:', tasksPath);
+        return;
+      }
       
       // Get all task directories (sorted by timestamp)
       const taskDirs = fs.readdirSync(tasksPath)
@@ -109,28 +125,95 @@ export class TokenManager {
         .sort()
         .reverse(); // Most recent first
       
+      console.log(`🔧 TokenManager: Found ${taskDirs.length} task directories:`, taskDirs.slice(0, 5));
+      
       this.tokenUsageHistory = [];
       
       // Load token data from each task
       for (const taskDir of taskDirs.slice(0, 10)) { // Last 10 tasks only
-        const apiHistoryPath = path.join(tasksPath, taskDir, 'api_conversation_history.json');
+        const taskPath = path.join(tasksPath, taskDir);
         
-        if (fs.existsSync(apiHistoryPath)) {
-          try {
-            const apiHistory = JSON.parse(fs.readFileSync(apiHistoryPath, 'utf8'));
-            
-            // Extract token usage from API conversation
-            for (const entry of apiHistory) {
-              if (entry.ts && entry.request && entry.response) {
-                const usage = this.extractTokenUsageFromAPIEntry(entry, taskDir);
-                if (usage) {
-                  this.tokenUsageHistory.push(usage);
+        // Debug: Show what files exist in this task directory
+        try {
+          const taskFiles = fs.readdirSync(taskPath);
+          console.log(`🔍 TokenManager: Task ${taskDir} contains files:`, taskFiles);
+          
+          // Try multiple possible file names for API conversation history
+          const possibleApiFiles = [
+            'api_conversation_history.json',
+            'conversation.json',
+            'history.json',
+            'api_history.json',
+            'messages.json'
+          ];
+          
+          let apiHistoryPath = null;
+          for (const possibleFile of possibleApiFiles) {
+            const testPath = path.join(taskPath, possibleFile);
+            if (fs.existsSync(testPath)) {
+              apiHistoryPath = testPath;
+              console.log(`✅ TokenManager: Found API history at: ${possibleFile}`);
+              break;
+            }
+          }
+          
+          // Also check for any .json files that might contain conversation data
+          if (!apiHistoryPath) {
+            const jsonFiles = taskFiles.filter((file: string) => file.endsWith('.json'));
+            if (jsonFiles.length > 0) {
+              console.log(`🔍 TokenManager: Checking JSON files for conversation data:`, jsonFiles);
+              
+              for (const jsonFile of jsonFiles) {
+                const testPath = path.join(taskPath, jsonFile);
+                try {
+                  const content = JSON.parse(fs.readFileSync(testPath, 'utf8'));
+                  
+                  // Check if this looks like conversation data
+                  if (Array.isArray(content) && content.some((entry: any) => 
+                    entry.ts && (entry.request || entry.response || entry.message))) {
+                    apiHistoryPath = testPath;
+                    console.log(`✅ TokenManager: Found conversation data in: ${jsonFile}`);
+                    break;
+                  }
+                } catch (parseError) {
+                  // Not valid JSON or doesn't match pattern, continue
                 }
               }
             }
-          } catch (parseError) {
-            console.warn('🔧 TokenManager: Failed to parse API history for task:', taskDir, parseError);
           }
+          
+          if (apiHistoryPath) {
+            try {
+              const apiHistory = JSON.parse(fs.readFileSync(apiHistoryPath, 'utf8'));
+              
+              if (Array.isArray(apiHistory)) {
+                console.log(`🔍 TokenManager: Processing ${apiHistory.length} conversation entries in ${taskDir}`);
+                
+                // Process Cline's conversation format: [{role: "user", content: [...]}, {role: "assistant", content: [...]}]
+                for (let i = 0; i < apiHistory.length; i += 2) {
+                  const userEntry = apiHistory[i];
+                  const assistantEntry = apiHistory[i + 1];
+                  
+                  if (userEntry && assistantEntry && 
+                      userEntry.role === 'user' && assistantEntry.role === 'assistant') {
+                    
+                    const usage = this.estimateTokenUsageFromConversation(userEntry, assistantEntry, taskDir, i / 2);
+                    if (usage) {
+                      this.tokenUsageHistory.push(usage);
+                    }
+                  }
+                }
+              } else {
+                console.log(`⚠️ TokenManager: API history in ${taskDir} is not an array`);
+              }
+            } catch (parseError) {
+              console.warn('🔧 TokenManager: Failed to parse API history for task:', taskDir, parseError);
+            }
+          } else {
+            console.log(`❌ TokenManager: No API conversation file found in task ${taskDir}`);
+          }
+        } catch (dirError) {
+          console.warn('🔧 TokenManager: Failed to read task directory:', taskDir, dirError);
         }
       }
       
@@ -143,7 +226,7 @@ export class TokenManager {
       const currentTotal = this.getCurrentUsage().totalTokens;
       const significantChange = Math.abs(currentTotal - previousTotal) > 100; // Only fire if >100 tokens changed
       
-      if (significantChange) {
+      if (significantChange || this.tokenUsageHistory.length > 0) {
         vscode.commands.executeCommand('cline-enhanced.tokenUsageUpdated', this.getCurrentUsage());
         this.notifyUsageChange(this.getCurrentUsage());
         
@@ -155,10 +238,70 @@ export class TokenManager {
     }
   }
 
+  private estimateTokenUsageFromConversation(userEntry: any, assistantEntry: any, taskId: string, conversationIndex: number): TokenUsage | null {
+    try {
+      // Extract text content from Cline's format: {role: "user", content: [{type: "text", text: "..."}]}
+      let userText = '';
+      let assistantText = '';
+      
+      // Process user content
+      if (userEntry.content && Array.isArray(userEntry.content)) {
+        userText = userEntry.content
+          .filter((item: any) => item.type === 'text')
+          .map((item: any) => item.text || '')
+          .join(' ');
+      }
+      
+      // Process assistant content  
+      if (assistantEntry.content && Array.isArray(assistantEntry.content)) {
+        assistantText = assistantEntry.content
+          .filter((item: any) => item.type === 'text')
+          .map((item: any) => item.text || '')
+          .join(' ');
+      }
+      
+      // Estimate tokens using 1 token ≈ 4 characters rule
+      const promptTokens = Math.ceil(userText.length / 4);
+      const completionTokens = Math.ceil(assistantText.length / 4);
+      const totalTokens = promptTokens + completionTokens;
+      
+      // Only create usage entry if we have substantial content
+      if (totalTokens < 50) {
+        return null; // Skip very small entries
+      }
+      
+      // Use current timestamp since we don't have exact timing from conversation files
+      const timestamp = Date.now() - (conversationIndex * 60000); // Stagger timestamps by 1 minute
+      
+      // Estimate cost for Claude Sonnet (default model)
+      const model = 'claude-sonnet-4-20250514';
+      const cost = this.calculateCost(model, promptTokens, completionTokens);
+      
+      console.log(`📊 TokenManager: Estimated conversation ${conversationIndex}: ${totalTokens} tokens (${promptTokens} prompt + ${completionTokens} completion)`);
+      console.log(`📊 Content preview - User: "${userText.substring(0, 100)}..." Assistant: "${assistantText.substring(0, 100)}..."`);
+      
+      return {
+        timestamp,
+        totalTokens,
+        promptTokens,
+        completionTokens,
+        cost,
+        model,
+        taskId: `${taskId}-conv-${conversationIndex}`,
+        provider: 'anthropic'
+      };
+    } catch (error) {
+      console.warn('🔧 TokenManager: Failed to estimate token usage from conversation:', error);
+      return null;
+    }
+  }
+
   private extractTokenUsageFromAPIEntry(entry: any, taskId: string): TokenUsage | null {
     try {
+      // Handle different entry formats
       const request = entry.request;
       const response = entry.response;
+      const message = entry.message;
       const timestamp = new Date(entry.ts).getTime();
       
       // Extract token counts from response
@@ -166,16 +309,56 @@ export class TokenManager {
       let completionTokens = 0;
       let totalTokens = 0;
       let cost = 0;
+      let model = 'claude-3-5-sonnet-20241022';
       
+      // Try multiple formats for token usage
       if (response && response.usage) {
         promptTokens = response.usage.input_tokens || response.usage.prompt_tokens || 0;
         completionTokens = response.usage.output_tokens || response.usage.completion_tokens || 0;
         totalTokens = promptTokens + completionTokens;
+      } else if (entry.usage) {
+        // Token usage might be at top level
+        promptTokens = entry.usage.input_tokens || entry.usage.prompt_tokens || 0;
+        completionTokens = entry.usage.output_tokens || entry.usage.completion_tokens || 0;
+        totalTokens = promptTokens + completionTokens;
+      } else if (entry.tokens) {
+        // Alternative token format
+        promptTokens = entry.tokens.input || entry.tokens.prompt || 0;
+        completionTokens = entry.tokens.output || entry.tokens.completion || 0;
+        totalTokens = promptTokens + completionTokens;
+      } else if (request && request.messages) {
+        // Estimate tokens from message content if no usage data
+        const messageText = request.messages.map((msg: any) => msg.content || '').join(' ');
+        promptTokens = Math.ceil(messageText.length / 4); // Rough estimation: 1 token ≈ 4 characters
+        
+        if (response && response.content) {
+          const responseText = Array.isArray(response.content) 
+            ? response.content.map((c: any) => c.text || '').join(' ')
+            : response.content.text || response.content;
+          completionTokens = Math.ceil(responseText.length / 4);
+        }
+        
+        totalTokens = promptTokens + completionTokens;
+        console.log(`📊 TokenManager: Estimated ${totalTokens} tokens from message content`);
+      }
+      
+      // Extract model information
+      if (request && request.model) {
+        model = request.model;
+      } else if (entry.model) {
+        model = entry.model;
+      }
+      
+      // Only create entry if we have meaningful token data
+      if (totalTokens === 0) {
+        console.log('⚠️ TokenManager: No token usage found in entry, skipping');
+        return null;
       }
       
       // Estimate cost based on model and tokens
-      const model = request?.model || 'claude-3-5-sonnet-20241022';
       cost = this.calculateCost(model, promptTokens, completionTokens);
+      
+      console.log(`✅ TokenManager: Extracted ${totalTokens} tokens (${promptTokens} prompt + ${completionTokens} completion) from task ${taskId}`);
       
       return {
         timestamp,
@@ -216,9 +399,9 @@ export class TokenManager {
     return 'unknown';
   }
 
-  public static getInstance(): TokenManager {
+  public static getInstance(context?: vscode.ExtensionContext): TokenManager {
     if (!TokenManager.instance) {
-      TokenManager.instance = new TokenManager();
+      TokenManager.instance = new TokenManager(context);
     }
     return TokenManager.instance;
   }
@@ -655,5 +838,133 @@ ${suggestions.unnecessaryFiles.length > 5 ? `... and ${suggestions.unnecessaryFi
     };
     
     return JSON.stringify(report, null, 2);
+  }
+
+  /**
+   * Check if a checkpoint should be created based on smart context analysis
+   */
+  public shouldCreateSmartCheckpoint(currentTokens: number, trigger: string): boolean {
+    return this.smartContextManager.shouldCreateCheckpoint(currentTokens, trigger);
+  }
+
+  /**
+   * Get optimal file selection for context inclusion
+   */
+  public getOptimalFileSelection(availableFiles: string[]): string[] {
+    return this.smartContextManager.getOptimalFileSelection(availableFiles);
+  }
+
+  /**
+   * Compress file content using smart context manager
+   */
+  public compressFileContent(content: string, targetReduction: number = 0.3): string {
+    return this.smartContextManager.compressFileContent(content, targetReduction);
+  }
+
+  /**
+   * Analyze current context state and provide optimization suggestions
+   */
+  public async analyzeContextOptimization(): Promise<any> {
+    return await this.contextOptimizer.analyzeAndOptimize();
+  }
+
+  /**
+   * Get prompt size analysis from monitor
+   */
+  public getPromptAnalysis(): any {
+    return this.promptSizeMonitor?.analyzeCurrentState() || null;
+  }
+
+  /**
+   * Get recent prompt size logs
+   */
+  public getRecentPromptLogs(hours: number = 24): any[] {
+    return this.promptSizeMonitor?.getRecentLogs(hours) || [];
+  }
+
+  /**
+   * Show detailed prompt size analysis
+   */
+  public async showPromptAnalysis(): Promise<void> {
+    if (this.promptSizeMonitor) {
+      await this.promptSizeMonitor.showDetailedAnalysis();
+    } else {
+      vscode.window.showInformationMessage('Prompt size monitoring not available');
+    }
+  }
+
+  /**
+   * Show context optimization panel
+   */
+  public async showContextOptimization(): Promise<void> {
+    await this.contextOptimizer.showOptimizationPanel();
+  }
+
+  /**
+   * Generate comprehensive context report
+   */
+  public generateContextReport(): string {
+    return this.smartContextManager.generateContextReport();
+  }
+
+  /**
+   * Get context usage metrics
+   */
+  public getContextMetrics(): any {
+    return this.smartContextManager.getContextMetrics();
+  }
+
+  /**
+   * Update context strategy
+   */
+  public updateContextStrategy(updates: any): void {
+    this.smartContextManager.updateContextStrategy(updates);
+  }
+
+  /**
+   * Monitor large prompts and show alerts
+   */
+  public monitorPromptSize(tokens: number, requestId: string): void {
+    if (tokens > 150000) { // Alert at 150k tokens
+      const message = `⚠️ Large prompt detected: ${tokens.toLocaleString()} tokens`;
+      vscode.window.showWarningMessage(
+        message,
+        'Optimize Context',
+        'View Analysis'
+      ).then(selection => {
+        if (selection === 'Optimize Context') {
+          this.showContextOptimization();
+        } else if (selection === 'View Analysis') {
+          this.showPromptAnalysis();
+        }
+      });
+    }
+  }
+
+  /**
+   * Emergency context optimization for critical token usage
+   */
+  public async emergencyOptimization(): Promise<void> {
+    console.log('🚨 Emergency context optimization triggered');
+    
+    // Apply aggressive optimization
+    this.smartContextManager.updateContextStrategy({
+      checkpointThreshold: 0.4,
+      maxFilesPerCheckpoint: 15,
+      fileSelectionStrategy: 'smart',
+      compressionEnabled: true
+    });
+    
+    // Show optimization results
+    const result = await this.contextOptimizer.analyzeAndOptimize();
+    
+    vscode.window.showInformationMessage(
+      `Emergency optimization applied. Potential savings: ${result.tokensSaved.toLocaleString()} tokens`,
+      'View Details'
+    ).then(selection => {
+      if (selection === 'View Details') {
+        this.showContextOptimization();
+      }
+    });
   }
 }

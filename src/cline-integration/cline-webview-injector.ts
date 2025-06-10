@@ -42,10 +42,8 @@ export class ClineWebviewInjector {
             }
         });
         
-        // Listen for token usage updates to update display
-        vscode.commands.registerCommand('cline-enhanced.tokenDisplayUpdate', () => {
-            this.updateDisplay();
-        });
+        // Note: Command 'cline-enhanced.tokenDisplayUpdate' is registered in extension.ts
+        // to avoid duplicate registration errors
     }
 
     public stopInjection(): void {

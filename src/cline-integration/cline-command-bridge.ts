@@ -64,10 +64,8 @@ export class ClineCommandBridge {
         console.log('🔧 ClineCommandBridge: Starting auto-injection');
         this.webviewInjector.startInjection();
         
-        // Update display only when token usage changes
-        vscode.commands.registerCommand('cline-enhanced.tokenUsageUpdated', () => {
-            this.webviewInjector.updateDisplay();
-        });
+        // Note: Command 'cline-enhanced.tokenUsageUpdated' is registered elsewhere
+        // to avoid duplicate registration errors
     }
 
     private async handleWebviewMessage(message: any): Promise<boolean> {

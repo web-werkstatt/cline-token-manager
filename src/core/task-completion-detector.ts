@@ -23,19 +23,13 @@ export class TaskCompletionDetector {
     }
     
     private setupEventListeners(): void {
-        // Listen for token usage updates
-        this.extensionContext.subscriptions.push(
-            vscode.commands.registerCommand('cline-enhanced.tokenUsageUpdated', (usage: any) => {
-                this.onTokenUsageUpdate(usage);
-            })
-        );
+        // Note: Commands 'cline-enhanced.tokenUsageUpdated' and 'cline-enhanced.taskCompleted'
+        // are registered centrally in extension.ts to prevent duplicate registration errors.
+        // We listen for token usage changes through the TokenManager instance instead.
         
-        // Listen for explicit task completion messages
-        this.extensionContext.subscriptions.push(
-            vscode.commands.registerCommand('cline-enhanced.taskCompleted', () => {
-                this.onTaskCompleted();
-            })
-        );
+        this.tokenManager.onUsageChange((usage: any) => {
+            this.onTokenUsageUpdate(usage);
+        });
     }
     
     private onTokenUsageUpdate(usage: any): void {

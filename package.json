@@ -1,5 +1,5 @@
 {
-  "name": "cline-token-manager-universal",
+  "name": "cline-token-manager-beta",
   "displayName": "Cline Token Manager - Universal Context Optimizer",
   "description": "Universal context optimization engine that reduces AI token usage by 76% for Cline and other AI coding tools",
   "version": "1.0.0",
@@ -65,6 +65,84 @@
         "title": "Reset Statistics",
         "category": "Cline Token Manager",
         "icon": "$(refresh)"
+      },
+      {
+        "command": "cline-token-manager.showContextAnalysis",
+        "title": "Show Context Analysis",
+        "category": "Cline Token Manager",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "cline-token-manager.showContextOptimization",
+        "title": "Show Context Optimization",
+        "category": "Cline Token Manager",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "cline-token-manager.emergencyOptimization",
+        "title": "Emergency Context Optimization",
+        "category": "Cline Token Manager",
+        "icon": "$(warning)"
+      },
+      {
+        "command": "cline-token-manager.generateContextReport",
+        "title": "Generate Context Report",
+        "category": "Cline Token Manager",
+        "icon": "$(file-text)"
+      },
+      {
+        "command": "cline-token-manager.debugTokenScan",
+        "title": "Debug Token Scan",
+        "category": "Cline Token Manager",
+        "icon": "$(debug)"
+      },
+      {
+        "command": "cline-token-manager.analyzeClineCache",
+        "title": "Analyze Cline Cache",
+        "category": "Cline Token Manager",
+        "icon": "$(search)"
+      },
+      {
+        "command": "cline-token-manager.smartCacheTrimming",
+        "title": "Smart Cache Trimming",
+        "category": "Cline Token Manager",
+        "icon": "$(scissors)"
+      },
+      {
+        "command": "cline-token-manager.emergencyCacheClear",
+        "title": "Emergency Cache Clear",
+        "category": "Cline Token Manager",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "cline-token-manager.cacheMonitorDashboard",
+        "title": "Cache Monitor Dashboard",
+        "category": "Cline Token Manager",
+        "icon": "$(pulse)"
+      },
+      {
+        "command": "cline-token-manager.smartFileSelection",
+        "title": "Smart File Selection",
+        "category": "Cline Token Manager",
+        "icon": "$(files)"
+      },
+      {
+        "command": "cline-token-manager.smartSelectionDashboard",
+        "title": "Smart Selection Dashboard",
+        "category": "Cline Token Manager",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "cline-token-manager.optimizeForCost",
+        "title": "Optimize for Cost",
+        "category": "Cline Token Manager",
+        "icon": "$(symbol-currency)"
+      },
+      {
+        "command": "cline-token-manager.optimizeForPerformance",
+        "title": "Optimize for Performance",
+        "category": "Cline Token Manager",
+        "icon": "$(zap)"
       }
     ],
     "configuration": {
