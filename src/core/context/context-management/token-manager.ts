@@ -5,6 +5,8 @@ import { SmartContextManager } from '../smart-context-manager';
 import { ContextOptimizer } from '../context-optimizer';
 import { PromptSizeMonitor } from '../prompt-size-monitor';
 import { PythonGatewayBridge } from '../python-gateway-bridge';
+import { ProviderDetector } from '../../../providers/provider-detector';
+import { ClaudeCodeAdapter } from '../../../providers/claude-code-adapter';
 import * as vscode from 'vscode';
 
 export class TokenManager {
@@ -18,6 +20,9 @@ export class TokenManager {
   private promptSizeMonitor: PromptSizeMonitor | null = null;
   private clineStoragePath: string | null = null;
   private pythonGateway: PythonGatewayBridge;
+  private providerDetector: ProviderDetector;
+  private claudeCodeAdapter: ClaudeCodeAdapter;
+  private currentProvider: string = 'anthropic';
 
   private constructor(context?: vscode.ExtensionContext) {
     this.configLoader = ConfigLoader.getInstance();
@@ -25,6 +30,8 @@ export class TokenManager {
     this.smartContextManager = SmartContextManager.getInstance();
     this.contextOptimizer = new ContextOptimizer();
     this.pythonGateway = PythonGatewayBridge.getInstance();
+    this.providerDetector = ProviderDetector.getInstance();
+    this.claudeCodeAdapter = ClaudeCodeAdapter.getInstance();
     
     if (context) {
       this.promptSizeMonitor = PromptSizeMonitor.getInstance(context);
@@ -32,6 +39,9 @@ export class TokenManager {
     
     // Initialize Python Gateway asynchronously
     this.initializePythonGateway();
+    
+    // Initialize provider detection
+    this.initializeProviderDetection();
     
     const config = this.configLoader.getConfig();
     
@@ -52,6 +62,71 @@ export class TokenManager {
     });
   }
 
+  private async initializeProviderDetection(): Promise<void> {
+    try {
+      console.log('🔍 TokenManager: Initializing provider detection...');
+      
+      // Detect current active provider
+      const currentProvider = await this.providerDetector.getCurrentProvider();
+      if (currentProvider) {
+        this.currentProvider = currentProvider.id;
+        console.log(`🔍 TokenManager: Active provider detected: ${currentProvider.name}`);
+        
+        // Special handling for Claude Code
+        if (currentProvider.id === 'claude-code') {
+          console.log('🚀 TokenManager: Claude Code provider detected! Initializing adapter...');
+          this.initializeClaudeCodeTracking();
+        }
+      }
+      
+      // Monitor for provider changes
+      this.providerDetector.onProviderChange((provider) => {
+        console.log(`🔍 TokenManager: Provider changed to: ${provider.name}`);
+        this.currentProvider = provider.id;
+        
+        // Handle Claude Code activation
+        if (provider.id === 'claude-code') {
+          this.initializeClaudeCodeTracking();
+        }
+      });
+      
+    } catch (error) {
+      console.error('🔍 TokenManager: Failed to initialize provider detection:', error);
+    }
+  }
+
+  private async initializeClaudeCodeTracking(): Promise<void> {
+    try {
+      console.log('🚀 TokenManager: Initializing Claude Code tracking...');
+      
+      // Start watching Claude Code sessions
+      this.claudeCodeAdapter.startWatching((usage) => {
+        console.log('🚀 TokenManager: Claude Code token update:', usage);
+        
+        // Convert to TokenUsage format
+        const tokenUsage: TokenUsage = {
+          timestamp: Date.now(),
+          totalTokens: usage.totalTokens || 0,
+          promptTokens: usage.promptTokens || 0,
+          completionTokens: usage.completionTokens || 0,
+          cost: this.calculateCost('claude-sonnet-4-20250514', usage.promptTokens || 0, usage.completionTokens || 0),
+          model: 'claude-sonnet-4-20250514',
+          taskId: `claude-code-${Date.now()}`,
+          provider: 'claude-code'
+        };
+        
+        this.trackTokenUsage(tokenUsage);
+      });
+      
+      vscode.window.showInformationMessage(
+        '🚀 Cline Token Manager: Claude Code provider detected and tracking enabled!'
+      );
+      
+    } catch (error) {
+      console.error('🚀 TokenManager: Failed to initialize Claude Code tracking:', error);
+    }
+  }
+
   private async initializeClineStoragePath(): Promise<void> {
     try {
       // Get VS Code's global storage path for Cline extension
@@ -61,20 +136,34 @@ export class TokenManager {
       
       let clineStorageBase = '';
       
-      if (process.platform === 'win32') {
-        clineStorageBase = path.join(os.homedir(), 'AppData', 'Roaming', 'Code', 'User', 'globalStorage', 'saoudrizwan.claude-dev');
-      } else if (process.platform === 'darwin') {
-        clineStorageBase = path.join(os.homedir(), 'Library', 'Application Support', 'Code', 'User', 'globalStorage', 'saoudrizwan.claude-dev');
-      } else {
-        clineStorageBase = path.join(os.homedir(), '.config', 'Code', 'User', 'globalStorage', 'saoudrizwan.claude-dev');
+      // Check provider-specific storage paths
+      if (this.currentProvider === 'claude-code') {
+        // Claude Code might use different storage
+        const claudeCodeStorage = path.join(os.homedir(), '.claude-code', 'cline-integration');
+        if (fs.existsSync(claudeCodeStorage)) {
+          clineStorageBase = claudeCodeStorage;
+        }
+      }
+      
+      // Default Cline storage paths
+      if (!clineStorageBase) {
+        if (process.platform === 'win32') {
+          clineStorageBase = path.join(os.homedir(), 'AppData', 'Roaming', 'Code', 'User', 'globalStorage', 'saoudrizwan.claude-dev');
+        } else if (process.platform === 'darwin') {
+          clineStorageBase = path.join(os.homedir(), 'Library', 'Application Support', 'Code', 'User', 'globalStorage', 'saoudrizwan.claude-dev');
+        } else {
+          clineStorageBase = path.join(os.homedir(), '.config', 'Code', 'User', 'globalStorage', 'saoudrizwan.claude-dev');
+        }
       }
       
       if (fs.existsSync(clineStorageBase)) {
         this.clineStoragePath = clineStorageBase;
         console.log('🔧 TokenManager: Found Cline storage at:', this.clineStoragePath);
         
-        // Watch for new tasks
-        this.watchClineTokenUsage();
+        // Watch for new tasks only if not using Claude Code provider
+        if (this.currentProvider !== 'claude-code') {
+          this.watchClineTokenUsage();
+        }
       } else {
         console.log('🔧 TokenManager: Cline storage not found at:', clineStorageBase);
       }
@@ -444,7 +533,9 @@ export class TokenManager {
       'claude-3-5-sonnet-20241022': { input: 3.00, output: 15.00 },
       'claude-3-opus-20240229': { input: 15.00, output: 75.00 },
       'claude-3-haiku-20240307': { input: 0.25, output: 1.25 },
-      'claude-4-20250514': { input: 5.00, output: 25.00 }
+      'claude-4-20250514': { input: 5.00, output: 25.00 },
+      'claude-sonnet-4-20250514': { input: 5.00, output: 25.00 },
+      'claude-4.0-sonnet-exp': { input: 5.00, output: 25.00 }
     };
     
     const modelPricing = pricing[model] || pricing['claude-3-5-sonnet-20241022'];
@@ -456,7 +547,13 @@ export class TokenManager {
   }
 
   private getProviderFromModel(model: string): string {
-    if (model.startsWith('claude')) return 'anthropic';
+    if (model.startsWith('claude')) {
+      // Special handling for Claude Code models
+      if (model.includes('4-20250514') || model.includes('4.0-sonnet')) {
+        return this.currentProvider === 'claude-code' ? 'claude-code' : 'anthropic';
+      }
+      return 'anthropic';
+    }
     if (model.startsWith('gpt')) return 'openai';
     return 'unknown';
   }
