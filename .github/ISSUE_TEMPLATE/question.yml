@@ -1,0 +1,138 @@
+name: ❓ Question or Help
+description: Ask a question or get help with Cline Token Manager
+title: "[Question] "
+labels: ["question", "help-wanted"]
+assignees:
+  - web-werkstatt
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Need help with Cline Token Manager? We're here to help! ❓
+        
+        **Before asking**, please check:
+        - [Documentation](https://github.com/web-werkstatt/cline-token-manager#readme)
+        - [Existing discussions](https://github.com/web-werkstatt/cline-token-manager/discussions)
+        - [FAQ section](https://github.com/web-werkstatt/cline-token-manager/wiki/FAQ)
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type 🎯
+      description: What kind of help do you need?
+      options:
+        - Installation & Setup
+        - Configuration & Settings
+        - Token Tracking & Analytics
+        - Context Optimization
+        - Smart File Selection
+        - Python ML Engine Setup
+        - Admin Dashboard Usage
+        - Cline Integration Issues
+        - Performance & Troubleshooting
+        - Feature Usage & Best Practices
+        - API & Extension Development
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question 💬
+      description: What would you like to know?
+      placeholder: |
+        Please be as specific as possible:
+        - What are you trying to achieve?
+        - What have you tried so far?
+        - Where are you getting stuck?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: experience-level
+    attributes:
+      label: Experience Level 📚
+      description: How familiar are you with Cline and VS Code extensions?
+      options:
+        - Beginner - New to Cline and extensions
+        - Intermediate - Some experience with Cline
+        - Advanced - Power user of Cline and AI tools
+        - Expert - Extension developer or AI researcher
+    validations:
+      required: true
+
+  - type: input
+    id: current-version
+    attributes:
+      label: Extension Version
+      description: What version of Cline Token Manager are you using?
+      placeholder: "e.g., v1.0.0 beta"
+
+  - type: input
+    id: cline-version
+    attributes:
+      label: Cline Version
+      description: What version of Cline are you using?
+      placeholder: "e.g., v3.17.11"
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context 📋
+      description: |
+        Provide any additional context that might help us answer your question
+      placeholder: |
+        Examples:
+        - Your development setup
+        - Project type and size
+        - Specific use case
+        - What you've already tried
+        - Screenshots or logs (if relevant)
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency Level ⏰
+      description: How urgent is this question?
+      options:
+        - Low - General curiosity or learning
+        - Medium - Would help improve my workflow
+        - High - Blocking my current work
+        - Critical - Major issue affecting productivity
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tried
+    attributes:
+      label: What have you already tried? 🔍
+      description: Please check all that apply
+      options:
+        - label: Read the README and documentation
+        - label: Searched existing issues and discussions
+        - label: Tried restarting VS Code
+        - label: Checked VS Code Extension Host console for errors
+        - label: Tested with different Cline settings
+        - label: Asked in community forums or Discord
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ## What happens next? 🚀
+        
+        1. **Community Help** - Other users might answer your question quickly
+        2. **Maintainer Response** - We'll respond within 24-48 hours
+        3. **Documentation Update** - Good questions often become FAQ entries
+        4. **Follow-up** - We might ask for more details if needed
+        
+        ## Other Ways to Get Help 💪
+        
+        - **[GitHub Discussions](https://github.com/web-werkstatt/cline-token-manager/discussions)** - Community Q&A
+        - **[Documentation](https://github.com/web-werkstatt/cline-token-manager#readme)** - Comprehensive guides
+        - **[Examples](https://github.com/web-werkstatt/cline-token-manager/tree/main/examples)** - Code examples and tutorials
+        
+        **Thanks for using Cline Token Manager!** ✨

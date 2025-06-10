@@ -1,0 +1,174 @@
+name: 🤖 Issue Automation
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  auto-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏷️ Auto Label Issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue || context.payload.pull_request;
+            const body = issue.body ? issue.body.toLowerCase() : '';
+            const title = issue.title ? issue.title.toLowerCase() : '';
+            const labels = [];
+            
+            // Bug detection
+            if (title.includes('[bug]') || body.includes('bug') || body.includes('error') || body.includes('crash')) {
+              labels.push('bug');
+            }
+            
+            // Feature detection
+            if (title.includes('[feature]') || body.includes('feature request') || body.includes('enhancement')) {
+              labels.push('enhancement');
+            }
+            
+            // Question detection
+            if (title.includes('[question]') || body.includes('how to') || body.includes('help')) {
+              labels.push('question');
+              labels.push('help-wanted');
+            }
+            
+            // Token tracking related
+            if (body.includes('token') && (body.includes('tracking') || body.includes('display'))) {
+              labels.push('token-tracking');
+            }
+            
+            // Admin dashboard related
+            if (body.includes('admin') || body.includes('dashboard') || body.includes('analytics')) {
+              labels.push('dashboard');
+            }
+            
+            // Python ML engine
+            if (body.includes('python') || body.includes('ml engine') || body.includes('optimization engine')) {
+              labels.push('python-ml-engine');
+            }
+            
+            // Cache management
+            if (body.includes('cache') || body.includes('context explosion') || body.includes('memory')) {
+              labels.push('cache-management');
+            }
+            
+            // Cline integration
+            if (body.includes('cline') && (body.includes('integration') || body.includes('compatibility'))) {
+              labels.push('cline-integration');
+            }
+            
+            // Performance
+            if (body.includes('performance') || body.includes('slow') || body.includes('cpu') || body.includes('memory leak')) {
+              labels.push('performance');
+            }
+            
+            // Documentation
+            if (body.includes('documentation') || body.includes('readme') || body.includes('docs')) {
+              labels.push('documentation');
+            }
+            
+            // Good first issue detection
+            if (body.includes('good first issue') || body.includes('beginner') || body.includes('easy fix')) {
+              labels.push('good first issue');
+            }
+            
+            // Priority detection
+            if (body.includes('critical') || body.includes('urgent') || body.includes('blocking')) {
+              labels.push('priority:high');
+            }
+            
+            // Add labels if any were detected
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: labels
+              });
+            }
+            
+            // Add "needs-triage" to all new issues
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              labels: ['needs-triage']
+            });
+
+      - name: 💬 Welcome First-Time Contributors
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            ## 👋 Welcome to Cline Token Manager!
+            
+            Thanks for creating your first issue! We're excited to have you as part of our community.
+            
+            **What happens next?**
+            - 🏷️ Our bot has automatically labeled your issue based on its content
+            - 👀 A maintainer will review and respond within 24-48 hours
+            - 💬 Feel free to add more details if needed
+            
+            **Want to contribute?**
+            - Check our [Contributing Guidelines](../CONTRIBUTING.md)
+            - Look at [`good first issue`](https://github.com/web-werkstatt/cline-token-manager/labels/good%20first%20issue) labels
+            - Join the discussion in our [GitHub Discussions](https://github.com/web-werkstatt/cline-token-manager/discussions)
+            
+            **Need faster help?**
+            - 📧 Email: support@web-werkstatt.at
+            - 💬 Discussions: For general questions
+            
+            Thanks for helping make AI coding more efficient! 🚀
+          
+          pr-message: |
+            ## 🎉 Thanks for your first Pull Request!
+            
+            We're thrilled to see your contribution to Cline Token Manager!
+            
+            **What happens next?**
+            - 🔍 Our CI will run automated checks
+            - 👀 A maintainer will review your code
+            - 💬 We might request some changes
+            - ✅ Once approved, we'll merge your contribution
+            
+            **PR Checklist:**
+            - [ ] Code follows our style guidelines
+            - [ ] Tests pass locally
+            - [ ] Documentation updated if needed
+            - [ ] Commit messages are clear
+            
+            Thanks for making Cline Token Manager better! 🚀
+
+  auto-close-stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧹 Close Stale Issues
+        uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: |
+            This issue has been automatically marked as stale because it has not had recent activity. 
+            It will be closed in 7 days if no further activity occurs. 
+            Thank you for your contributions! 🙏
+          
+          stale-pr-message: |
+            This pull request has been automatically marked as stale because it has not had recent activity. 
+            It will be closed in 14 days if no further activity occurs. 
+            Please update your PR or let us know if you need help! 💪
+          
+          days-before-stale: 30
+          days-before-close: 7
+          days-before-pr-stale: 45
+          days-before-pr-close: 14
+          
+          stale-issue-label: 'stale'
+          stale-pr-label: 'stale'
+          
+          exempt-issue-labels: 'pinned,security,bug,priority:high'
+          exempt-pr-labels: 'pinned,security'

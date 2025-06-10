@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/web-werkstatt/cline-token-manager/discussions
+    about: Ask questions, share ideas, and discuss with the community
+  - name: 📖 Documentation
+    url: https://github.com/web-werkstatt/cline-token-manager#readme
+    about: Read the full documentation and getting started guide
+  - name: 🚀 Feature Roadmap
+    url: https://github.com/web-werkstatt/cline-token-manager/projects
+    about: See what we're working on and what's planned
+  - name: 📧 Email Support
+    url: mailto:support@web-werkstatt.at
+    about: Contact us directly for business inquiries or sensitive issues

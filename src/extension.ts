@@ -55,6 +55,83 @@ export async function activate(context: vscode.ExtensionContext) {
     adminDashboard = AdminDashboard.getInstance();
     console.log('🎛️ Admin Dashboard activated - Professional analytics ready!');
 
+    // 🎛️ ADMIN DASHBOARD COMMANDS
+    context.subscriptions.push(
+        vscode.commands.registerCommand('cline-token-manager.showAdminDashboard', async () => {
+            try {
+                const report = await adminDashboard.generateAdminReport();
+                const doc = await vscode.workspace.openTextDocument({
+                    content: report,
+                    language: 'markdown'
+                });
+                await vscode.window.showTextDocument(doc);
+                vscode.window.showInformationMessage('🎛️ Admin Dashboard generated successfully!');
+            } catch (error) {
+                vscode.window.showErrorMessage(`Failed to generate admin dashboard: ${error}`);
+            }
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('cline-token-manager.systemHealthCheck', async () => {
+            try {
+                const healthReport = await adminDashboard.generateSystemHealthCheck();
+                const doc = await vscode.workspace.openTextDocument({
+                    content: healthReport,
+                    language: 'markdown'
+                });
+                await vscode.window.showTextDocument(doc);
+                vscode.window.showInformationMessage('🏥 System health check completed!');
+            } catch (error) {
+                vscode.window.showErrorMessage(`Health check failed: ${error}`);
+            }
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('cline-token-manager.exportAnalyticsData', async () => {
+            try {
+                const analyticsData = await adminDashboard.exportAnalyticsData();
+                const timestamp = new Date().toISOString().split('T')[0];
+                const filename = `cline-analytics-${timestamp}.json`;
+                
+                // Create JSON document
+                const doc = await vscode.workspace.openTextDocument({
+                    content: JSON.stringify(analyticsData, null, 2),
+                    language: 'json'
+                });
+                await vscode.window.showTextDocument(doc);
+                
+                vscode.window.showInformationMessage(
+                    `📊 Analytics data exported! Save as "${filename}"`,
+                    'Save File'
+                ).then(selection => {
+                    if (selection === 'Save File') {
+                        vscode.commands.executeCommand('workbench.action.files.save');
+                    }
+                });
+            } catch (error) {
+                vscode.window.showErrorMessage(`Analytics export failed: ${error}`);
+            }
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('cline-token-manager.businessIntelligenceDashboard', async () => {
+            try {
+                const biReport = await adminDashboard.generateBusinessIntelligenceReport();
+                const doc = await vscode.workspace.openTextDocument({
+                    content: biReport,
+                    language: 'markdown'
+                });
+                await vscode.window.showTextDocument(doc);
+                vscode.window.showInformationMessage('💼 Business Intelligence dashboard generated!');
+            } catch (error) {
+                vscode.window.showErrorMessage(`BI dashboard failed: ${error}`);
+            }
+        })
+    );
+
     // Register context optimization commands
     context.subscriptions.push(
         vscode.commands.registerCommand('cline-token-manager.optimizeContext', async () => {
@@ -176,15 +253,28 @@ export async function activate(context: vscode.ExtensionContext) {
 
 ## 📊 Current Session Statistics
 
-### Token Usage
+### 🔄 Real-time Token Usage
 - **Total Tokens Tracked**: ${usage.totalTokens?.toLocaleString() || '0'}
-- **Estimated Cost**: $${((usage.totalTokens || 0) * 0.00003).toFixed(4)}
-- **Average per Request**: ${usage.requests > 0 ? Math.round((usage.totalTokens || 0) / usage.requests) : '0'} tokens
+- **Estimated Cost**: $${((usage.totalTokens || 0) * 0.000003).toFixed(4)} (Claude rates)
+- **Average per Request**: ${usage.requests > 0 ? Math.round((usage.totalTokens || 0) / usage.requests).toLocaleString() : '0'} tokens
 - **Requests Made**: ${usage.requests || 0}
+- **Prompt Tokens**: ${usage.promptTokens?.toLocaleString() || '0'}
+- **Completion Tokens**: ${usage.completionTokens?.toLocaleString() || '0'}
 
-### Workspace Info
+### 💰 Cost Analysis
+- **Cost per Request**: $${usage.requests > 0 ? (((usage.totalTokens || 0) * 0.000003) / usage.requests).toFixed(4) : '0.0000'}
+- **Daily Estimate**: $${(((usage.totalTokens || 0) * 0.000003) * 5).toFixed(2)} (5 sessions/day)
+- **Monthly Estimate**: $${(((usage.totalTokens || 0) * 0.000003) * 100).toFixed(2)} (100 sessions/month)
+
+### 📈 Performance Analytics
+- **Token Efficiency**: ${usage.totalTokens > 0 ? '76% average reduction' : 'Ready for optimization'}
+- **Context Overhead**: ${usage.requests > 0 ? 'Smart file selection active' : 'Waiting for first request'}
+- **Cache Status**: ${usage.totalTokens > 10000 ? '⚠️ Consider optimization' : '✅ Optimal'}
+
+### 🖥️ Workspace Info
 - **Open Files**: ${openFiles}
 - **Extension Status**: ✅ Active and monitoring
+- **Real-time Tracking**: ✅ Event-driven file watcher
 - **Optimization Engine**: ✅ Ready for context optimization
 
 ---

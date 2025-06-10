@@ -1,0 +1,52 @@
+# Configuration for GitHub Labeler Action
+# https://github.com/actions/labeler
+
+# Label PRs based on file paths
+token-tracking:
+  - src/core/context/context-management/token-manager.ts
+  - src/core/context/context-management/**/*
+  - src/extension.ts
+
+dashboard:
+  - src/dashboard/**/*
+  - src/webview/**/*
+
+python-ml-engine:
+  - src/core/context/python-gateway-bridge.ts
+  - python/**/*
+  - src/**/*python*
+
+cache-management:
+  - src/core/context/cline-context-interceptor.ts
+  - src/core/context/smart-*
+  - src/**/*cache*
+
+cline-integration:
+  - src/cline-integration/**/*
+  - src/**/*cline*
+
+tests:
+  - tests/**/*
+  - **/*.test.ts
+  - **/*.spec.ts
+
+documentation:
+  - '**/*.md'
+  - docs/**/*
+  - README*
+
+github:
+  - .github/**/*
+
+dependencies:
+  - package.json
+  - package-lock.json
+  - requirements.txt
+  - pyproject.toml
+
+configuration:
+  - .vscode/**/*
+  - tsconfig.json
+  - webpack.config.js
+  - .eslintrc*
+  - .prettierrc*

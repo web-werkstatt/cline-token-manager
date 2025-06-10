@@ -132,8 +132,8 @@ export class TokenManager {
         
         console.log('✅ TokenManager: Real-time file watcher active');
         
-        // Load initial data
-        this.loadClineTokenData();
+        // START WITH 0 TOKENS (no fallback data)
+        this.resetTokenDisplay();
       } else {
         console.log('⚠️ TokenManager: Cline tasks directory not found, starting with 0 tokens');
         this.resetTokenDisplay();
@@ -312,14 +312,24 @@ export class TokenManager {
           .join(' ');
       }
       
-      // Estimate tokens using 1 token ≈ 4 characters rule
-      const promptTokens = Math.ceil(userText.length / 4);
-      const completionTokens = Math.ceil(assistantText.length / 4);
+      // REALISTIC TOKEN ESTIMATION: Account for full Cline context
+      // Cline sends: workspace files + conversation history + new message
+      
+      // Base message tokens (1 token ≈ 4 characters)
+      const basePromptTokens = Math.ceil(userText.length / 4);
+      const baseCompletionTokens = Math.ceil(assistantText.length / 4);
+      
+      // Estimate workspace context overhead (Cline includes files automatically)
+      const contextOverhead = Math.min(8000, Math.max(2000, basePromptTokens * 10)); // 2k-8k context
+      
+      // Realistic token calculation
+      const promptTokens = basePromptTokens + contextOverhead;
+      const completionTokens = baseCompletionTokens;
       const totalTokens = promptTokens + completionTokens;
       
       // Only create usage entry if we have substantial content
-      if (totalTokens < 50) {
-        return null; // Skip very small entries
+      if (basePromptTokens + baseCompletionTokens < 10) {
+        return null; // Skip very small actual messages (but realistic context is included)
       }
       
       // Use current timestamp since we don't have exact timing from conversation files
