@@ -1,8 +1,8 @@
 {
   "name": "cline-token-manager-beta",
-  "displayName": "Cline Token Manager - Universal Context Optimizer",
-  "description": "Universal context optimization engine that reduces AI token usage by 76% for Cline and other AI coding tools",
-  "version": "1.0.0",
+  "displayName": "Cline Token Manager v3.17.11 - Universal Context Optimizer",
+  "description": "Universal context optimization engine that reduces AI token usage by 76% - Compatible with Cline v3.17.11 and Claude Code",
+  "version": "1.1.0",
   "publisher": "webwerkstatt",
   "author": "Joseph Kisler - Webwerkstatt",
   "license": "MIT",
