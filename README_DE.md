@@ -41,13 +41,46 @@
 ### **Inspiriert von Cursor's Erfolg:**
 Cursor bewies, dass intelligentes Kontext-Management $400M+ Wert schafft. Wir nahmen diese Inspiration und machten sie universal:
 
+### **🔄 Echtzeit Token-Verfolgung:**
+```
+🎯 Event-getriebene Architektur:
+├── Startet bei 0 Tokens (sauberer Zustand)
+├── Echtzeit Datei-Überwachung (keine Polling-Schleifen)
+├── Sofortige Updates nach jedem Cline Request
+├── 3-Sekunden Debounce (Performance-optimiert)
+└── Genaue Kosten-Verfolgung (0,000003$ pro Token)
+```
+
+### **🎛️ Professionelles Admin Dashboard:**
+```
+📊 Business Intelligence Features:
+├── Echtzeit Analytics-Sammlung (alle 10 Minuten)
+├── Nutzungstrend-Analyse (24-Stunden Muster)
+├── ROI-Projektionen und Kosten-Analyse
+├── System-Gesundheits-Monitoring
+├── Analytics Export (JSON Format)
+└── Professionelle SaaS-ready Berichterstattung
+```
+
+### **🐍 Python ML Optimization Engine:**
+```
+🚀 Erweiterte Optimierung:
+├── Statistische Optimierung (TF-IDF Algorithmen)
+├── Hybrid-Optimierung (Konversationsfluss + Code-Intelligenz)
+├── 70%+ Token-Reduktion (vs 50% TypeScript Fallback)
+├── Qualitäts-Erhaltung (1,0/1,0 Score beibehalten)
+├── Sub-20ms Verarbeitungszeit
+└── TypeScript Fallback wenn Python nicht verfügbar
+```
+
 ### **Unsere Komplementären Vorteile:**
 ```
 ✅ Universelle Plattform (funktioniert mit VS Code + JEDEM AI-Tool)
 ✅ Echtzeit Kosten-Tracking (transparente Kosten-Überwachung)
 ✅ Cache-Explosion Prevention (spezialisiert für Cline's Architektur)
 ✅ Open Source & Kostenlos (MIT lizenziert, Community-getrieben)
-✅ Transparente Algorithmen (lehrreich und anpassbar)
+✅ Professionelle Analytics (SaaS-ready Admin Dashboard)
+✅ Python ML Engine (erweiterte Optimierungsalgorithmen)
 ✅ Cross-Tool Kompatibilität (Cline, Copilot, zukünftige AI-Tools)
 ```
 
@@ -197,6 +230,39 @@ const selection = await smartFileSelector.selectOptimalFiles({
     costOptimization: true
 });
 ```
+
+## 🎛️ **Verfügbare Befehle**
+
+Alle Befehle erreichbar via `Strg+Umschalt+P` → "Cline Token Manager":
+
+### **🔄 Kern-Features**
+- **`Optimize Context`** - Ein-Klick Workspace-Optimierung (Strg+Umschalt+O)
+- **`Show Token Manager Dashboard`** - Echtzeit Nutzungsübersicht
+- **`Generate Optimization Report`** - Detaillierte Einsparungs-Analyse
+
+### **🎛️ Professionelle Analytics** 
+- **`Admin Dashboard`** - Umfassender Business Intelligence Bericht
+- **`System Health Check`** - Echtzeit System-Status und Diagnose  
+- **`Export Analytics Data`** - JSON Export für externe Analyse
+- **`Business Intelligence Dashboard`** - ROI-Projektionen und Markt-Analyse
+
+### **🐍 Python ML Engine**
+- **`Test Python Gateway`** - ML-Optimierungs-Engine validieren
+- **`Optimize with Python Engine`** - Erweiterte 70%+ Token-Reduktion
+- **`Show Optimization Statistics`** - Performance-Metriken Vergleich
+- **`Python Gateway Information`** - Setup-Status und Fähigkeiten
+
+### **🚨 Cache-Management**
+- **`Analyze Cline Cache`** - Echtzeit Cache-Explosion Erkennung
+- **`Smart Cache Trimming`** - Intelligente Cache-Reduktion
+- **`Emergency Cache Clear`** - Nukleare Option für kritische Situationen
+- **`Cache Monitor Dashboard`** - Live Cache-Status Monitoring
+
+### **🚀 Intelligente Datei-Auswahl**  
+- **`Smart File Selection`** - Cursor-Style intelligente Datei-Auswahl
+- **`Smart Selection Dashboard`** - Datei-Relevanz-Analyse
+- **`Optimize for Cost`** - Token-Nutzung minimieren Strategie
+- **`Optimize for Performance`** - Geschwindigkeits-optimierte Auswahl
 
 ## ⚙️ **Konfiguration**
 
