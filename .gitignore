@@ -1,0 +1,118 @@
+# AI Context Optimizer - .gitignore
+# Repository: https://github.com/web-werkstatt/ai-context-optimizer
+
+# ===========================================
+# VS Code Extension Build Artifacts
+# ===========================================
+*.vsix
+out/
+dist/
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===========================================
+# Development & Compilation
+# ===========================================
+.vscode-test/
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+*.tsbuildinfo
+coverage/
+
+# ===========================================
+# Internal Documentation (NOT for public repo)
+# ===========================================
+internal-docs/
+docs/sprints/
+docs/analysis/
+archive/
+assets/
+development/
+
+# Business Strategy Documents
+BUSINESS-*.md
+INVESTMENT-*.md
+MARKET-*.md
+PAPERLESS-*.md
+TECHNICAL-ARCHITECTURE-*.md
+
+# Marketing & Community Materials  
+COMMUNITY-*.md
+REDDIT-*.md
+GITHUB-LAUNCH-*.md
+
+# Internal Development Notes
+CLAUDE.md
+BETA-LAUNCH-*.md
+SPRINT-*.md
+CORE-ENGINE-*.md
+PYTHON-GATEWAY-*.md
+FEEDBACK-*.md
+GITHUB-DISCUSSIONS-*.md
+
+# Experimental Features
+PYTHON-UNIVERSAL-*.md
+CURSOR-EXPERIENCE-*.md
+MVP-*.md
+PRODUCT-ROADMAP-*.md
+
+# ===========================================
+# Environment & Sensitive Information
+# ===========================================
+.env
+.env.*
+*.key
+*.pem
+config/local.json
+secrets/
+
+# ===========================================
+# OS & Editor Files
+# ===========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+.swp
+.swo
+
+# ===========================================
+# Temporary Files
+# ===========================================
+*.tmp
+*.temp
+.tmp/
+.cache/
+.temp/
+
+# ===========================================
+# Website Development (Internal)
+# ===========================================
+aicontextoptimizer-com/
+clineoptimizer-com/
+
+# ===========================================
+# Allow Essential Public Documentation
+# ===========================================
+!README.md
+!README_DE.md
+!INSTALLATION-GUIDE.md
+!CHANGELOG.md
+!RELEASE-NOTES-v*.md
+!LICENSE
+!.github/
+
+# Allow Technical Documentation (User-Relevant)
+!CACHE-EXPLOSION-SOLUTION.md
+!PERFORMANCE-VALIDATION.md
+!TEST-REPORT.md
+!TOKEN-ESTIMATION-FIX.md
+!TOKEN-REDUCTION-MEASUREMENTS.md

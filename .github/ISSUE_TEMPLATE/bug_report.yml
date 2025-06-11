@@ -1,0 +1,178 @@
+name: 🐛 Bug Report
+description: Report a bug or issue with Cline Token Manager
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+assignees:
+  - web-werkstatt
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! 🐛
+        
+        **Before submitting**, please check if your issue has already been reported.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm the following
+      options:
+        - label: I searched existing issues and this hasn't been reported yet
+          required: true
+        - label: I'm using the latest version of Cline Token Manager
+          required: true
+        - label: I have Cline extension installed and active
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Extension Version
+      description: What version of Cline Token Manager are you using?
+      placeholder: "e.g., v1.0.0 beta"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: cline-version
+    attributes:
+      label: Cline Version
+      description: Which version of Cline are you using?
+      options:
+        - v3.17.12 (Latest)
+        - v3.17.11
+        - v3.17.10
+        - v3.16.x
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: Provider/Model
+      description: What AI provider and model are you using?
+      placeholder: "e.g., cline:anthropic/claude-4.0-sonnet-exp-20250514"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened? 🤔
+      description: Describe the bug you encountered
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen? ✅
+      description: Describe what you expected to happen
+      placeholder: Tell us what should have happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce 📋
+      description: How can we reproduce this issue?
+      placeholder: |
+        1. Open VS Code with Cline and Token Manager installed
+        2. Do something...
+        3. See the error
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Relevant logs/output 📊
+      description: Please copy and paste any relevant console output, error messages, or logs
+      placeholder: |
+        Console output, error messages, or relevant logs here.
+        This will be automatically formatted as code, so no need for backticks.
+      render: shell
+
+  - type: dropdown
+    id: feature-area
+    attributes:
+      label: Feature Area 🎯
+      description: Which feature area is affected?
+      options:
+        - Token Tracking & Display
+        - Admin Dashboard & Analytics
+        - Context Optimization
+        - Smart File Selection
+        - Python ML Engine
+        - Cache Management
+        - Cline Integration
+        - Settings & Configuration
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System 💻
+      description: What operating system are you using?
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS (Latest)
+        - macOS (Older)
+        - Linux (Ubuntu/Debian)
+        - Linux (Other)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: vscode-version
+    attributes:
+      label: VS Code Version
+      description: What version of VS Code are you using?
+      placeholder: "e.g., 1.85.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context 💡
+      description: |
+        Add any other context about the problem here.
+        
+        Examples:
+        - Screenshots or screen recordings
+        - Workspace size and file types
+        - Token usage patterns
+        - Other extensions installed
+        - Network/proxy configuration
+      placeholder: Any additional information that might help us understand the issue
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ## What happens next? 🚀
+        
+        1. **We'll triage** your issue within 24-48 hours
+        2. **Label appropriately** based on feature area and priority
+        3. **Ask for clarification** if needed
+        4. **Work on a fix** and keep you updated
+        
+        ## Want to contribute? 💪
+        
+        - Check our [Contributing Guidelines](../CONTRIBUTING.md)
+        - Look at [Good First Issues](https://github.com/web-werkstatt/ai-context-optimizer/labels/good%20first%20issue)
+        - Join discussions in [GitHub Discussions](https://github.com/web-werkstatt/ai-context-optimizer/discussions)
+        
+        **Thanks for helping make Cline Token Manager better!** ✨

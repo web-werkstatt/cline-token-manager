@@ -1,0 +1,198 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement for Cline Token Manager
+title: "[Feature] "
+labels: ["enhancement", "needs-discussion"]
+assignees:
+  - web-werkstatt
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! ✨
+        
+        **Before submitting**, please check if your feature has already been requested.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm the following
+      options:
+        - label: I searched existing issues and feature requests
+          required: true
+        - label: This feature would benefit other Cline Token Manager users
+          required: true
+        - label: I understand this is a suggestion, not a guarantee
+          required: true
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Category 🎯
+      description: What type of feature are you requesting?
+      options:
+        - Token Tracking Enhancement
+        - New Analytics/Dashboard Feature
+        - Context Optimization Improvement
+        - Smart File Selection Enhancement
+        - Python ML Engine Feature
+        - Cache Management Feature
+        - Cline Integration Improvement
+        - UI/UX Enhancement
+        - Performance Optimization
+        - New AI Provider Support
+        - Enterprise/Team Feature
+        - Developer/API Feature
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement 🤔
+      description: What problem does this feature solve? What's the current pain point?
+      placeholder: |
+        Example: "As a Cline power user, I often exceed my token budget because..."
+        Example: "When working on large projects, I need to..."
+        Example: "The current dashboard doesn't show..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution 💡
+      description: Describe your proposed feature or enhancement in detail
+      placeholder: |
+        What would you like to see added or changed?
+        How should it work?
+        What should the user experience be like?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions 🔄
+      description: Have you considered any alternative approaches?
+      placeholder: |
+        Are there other ways to solve this problem?
+        What alternatives have you tried?
+        Why is your proposed solution better?
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level 📊
+      description: How important is this feature to you?
+      options:
+        - Critical - Blocking my workflow
+        - High - Would significantly improve my experience
+        - Medium - Nice to have, would use it
+        - Low - Minor improvement
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: User Type 👤
+      description: How would you describe your usage pattern?
+      options:
+        - Heavy Cline User (Daily, Large Projects)
+        - Regular Cline User (Weekly, Medium Projects)
+        - Occasional Cline User (Monthly, Small Projects)
+        - Enterprise/Team User
+        - Extension Developer
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases & Examples 📋
+      description: Provide specific examples of how you would use this feature
+      placeholder: |
+        Example scenarios:
+        1. When working on a React project with 50+ files...
+        2. During long coding sessions, I need to...
+        3. For team collaboration, it would help if...
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Ideas 🛠️
+      description: |
+        Do you have ideas about how this could be implemented? 
+        (Optional - we appreciate technical input!)
+      placeholder: |
+        This could be implemented by...
+        It might integrate with...
+        The UI could look like...
+        
+        Note: Don't worry if you're not technical - we're interested in any ideas!
+
+  - type: checkboxes
+    id: related-features
+    attributes:
+      label: Related Features 🔗
+      description: Would this feature work well with existing functionality?
+      options:
+        - label: This enhances existing token tracking
+        - label: This complements the admin dashboard
+        - label: This improves context optimization
+        - label: This works with smart file selection
+        - label: This enhances Python ML engine
+        - label: This improves Cline integration
+        - label: This is completely new functionality
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Estimated Complexity 📈
+      description: How complex do you think this feature might be?
+      options:
+        - Simple - Small UI change or setting
+        - Medium - New feature with moderate complexity
+        - Complex - Major feature requiring significant development
+        - Enterprise - Large-scale feature affecting architecture
+        - "I don't know"
+    validations:
+      required: true
+
+  - type: textarea
+    id: business-value
+    attributes:
+      label: Business Value 💰
+      description: |
+        How would this feature provide value? (Optional but helpful)
+      placeholder: |
+        This would help by:
+        - Saving X hours per week
+        - Reducing token costs by Y%
+        - Improving team collaboration
+        - Enabling new workflows
+        - Supporting enterprise adoption
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ## What happens next? 🚀
+        
+        1. **Community Discussion** - We'll open this for community feedback
+        2. **Feasibility Assessment** - We'll evaluate technical complexity
+        3. **Roadmap Planning** - If approved, we'll add it to our roadmap
+        4. **Implementation** - We'll work on it based on priority
+        
+        ## Want to contribute? 💪
+        
+        - **Code contributions** are welcome if you want to implement this yourself!
+        - **Design feedback** is valuable for UI/UX features
+        - **Testing** is always needed once features are implemented
+        
+        **Thanks for helping shape the future of Cline Token Manager!** ✨
