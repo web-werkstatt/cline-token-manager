@@ -133,6 +133,14 @@ Cursor bewies, dass intelligentes Kontext-Management $400M+ Wert schafft. Wir na
 
 ### **🎯 Wichtige Befehle**
 ```bash
+# Revolutionärer Auto-Fix (Weltweit Erstes!)
+Strg+Shift+P → "Cline Token Manager: Auto-Fix Token Limits"
+Token Manager Icon → "🔧 Check & Fix Token Limits"
+
+# Professionelles Sidebar Dashboard
+Token Manager Icon in linker Sidebar → Live Dashboard öffnet sich
+Alle Features mit Ein-Klick vom Sidebar zugänglich
+
 # Kontext-Optimierung (Cursor-Style)
 Strg+Shift+O → Intelligente Datei-Auswahl & Optimierung
 
@@ -153,6 +161,27 @@ Strg+Shift+P → "Optimize for Cost"
 - **Seelenfrieden**: Nie wieder Kontext-Limits erreichen
 
 ## 🚨 **Durchbruch-Features**
+
+### **🔧 WELTWEIT ERSTES Auto-Fix für Cline Token Limits**
+**REVOLUTIONÄRE EIN-KLICK-LÖSUNG:**
+- **Problem**: Cline begrenzt künstlich ALLE Anthropic Modelle auf 8192 Tokens (Claude 4 Sonnet sollte 64.000 haben!)
+- **Lösung**: Automatische Erkennung und Ein-Klick-Fix mit Backup-Erstellung
+- **Behobene Modelle**: Claude 4 Sonnet (8192→64000), Claude 4 Opus (8192→32000), Claude 3.7 Sonnet (8192→64000)
+- **Professionelle UX**: Modal-Dialoge mit intelligenter Token-Anzeige (zeigt Verbesserungs-Impact)
+- **Backup-Schutz**: Automatische Zeitstempel-Backups vor allen Änderungen
+- **Null Risiko**: Einfache Wiederherstellung bei Problemen
+- **Ein-Klick-Erfahrung**: "🔧 Fix verfügbar!" → Klick → Behoben → VS Code Neustart
+- **GitHub Issue**: Adressiert [Cline Issue #4149](https://github.com/cline/cline/issues/4149)
+
+### **🎛️ Professionelles Sidebar Dashboard**
+**VOLLSTÄNDIGE VS CODE INTEGRATION:**
+- **Echtzeit Token-Tracking**: Live Session-Statistiken in der Sidebar
+- **Kosten-Monitoring**: Sofortige Kostenberechnungen (0,00003$ pro Token Präzision)
+- **Optimierungs-Metriken**: Live-Anzeige der Token-Reduktions-Prozentsätze
+- **Auto-Fix Status**: Ein-Klick Token-Limit-Behebung direkt von der Sidebar
+- **Quick Actions Panel**: Alle wichtigen Features mit einem Klick zugänglich
+- **Auto-Refresh**: Aktualisiert sich alle 30 Sekunden automatisch
+- **Professionelles Design**: Native VS Code Styling und Integration
 
 ### **🔥 Cache-Explosion Prevention System** 
 **LÖST DAS $400M PROBLEM:**
@@ -271,6 +300,17 @@ const selection = await smartFileSelector.selectOptimalFiles({
 ## 🎛️ **Verfügbare Befehle**
 
 Alle Befehle erreichbar via `Strg+Umschalt+P` → "Cline Token Manager":
+
+### **🔧 Revolutionärer Auto-Fix**
+- **`Auto-Fix Token Limits`** - Weltweit erstes Ein-Klick Token-Limit-Fix
+- **`Check Token Limits`** - Automatische Problem-Erkennung und Analyse
+- **`Show Token Limit Fix Instructions`** - Umfassende Fix-Dokumentation
+
+### **🎛️ Professionelles Sidebar Dashboard**
+- **Token Manager Icon** - Klick auf linkes Sidebar Icon für Live-Dashboard
+- **Echtzeit Metriken** - Live Token-Nutzung, Kosten, Optimierungs-Statistiken
+- **Quick Actions** - Ein-Klick-Zugang zu allen Features von der Sidebar
+- **Auto-Refresh** - Aktualisiert sich alle 30 Sekunden automatisch
 
 ### **🔄 Kern-Features**
 - **`Optimize Context`** - Ein-Klick Workspace-Optimierung (Strg+Umschalt+O)
