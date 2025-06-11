@@ -16,12 +16,15 @@
 ## 📦 **Download & Installation**
 
 ### **Latest Release:**
-**[📥 Download v1.1.1-beta - WORLD'S FIRST Token Limit Fix](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
-- **🚨 NEW**: Cline Token Limit Problem Detection & Fix
+**[📥 Download v1.1.3-beta - PERFECTED Auto-Fix for Token Limits](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
+- **🎯 PERFECTED**: True One-Click Auto-Fix (no complex dialogs!)
+- **✨ PROFESSIONAL**: Modal dialogs with smart token display (8192 → 64000)
+- **🔧 AUTOMATIC**: Instant backup creation and fix application
+- **🚨 SOLVED**: Cline artificially limiting all models to 8192 tokens
 - **Compatible**: Cline v3.17.11 + Claude Code Ready
-- **Features**: Universal provider support, 76% token reduction + Token limit fixes
+- **Features**: Universal provider support, 76% token reduction + Perfected auto-fixes
 - **Size**: 10.7 MB
-- **Status**: Beta (stable features + cutting-edge fixes)
+- **Status**: Beta (stable features + perfected auto-fixes)
 
 ### **Stable Release:**
 **[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/ai-context-optimizer/releases/tag/v1.1.0-cline-v3.17.11)**
@@ -33,11 +36,12 @@
 ### **Quick Installation:**
 ```bash
 # Latest Beta (recommended):
-1. Download cline-token-manager-beta-1.1.1.vsix
+1. Download cline-token-manager-beta-1.1.3.vsix
 2. Open VS Code
 3. Ctrl+Shift+P → "Extensions: Install from VSIX"
 4. Select downloaded file
 5. Restart VS Code → Ready!
+6. Use Ctrl+Shift+P → "Cline Token Manager: Auto-Fix Token Limits" for one-click fixes!
 
 # Stable Version:
 1. Download cline-token-manager-v3.17.11-1.1.0.vsix
@@ -187,6 +191,15 @@ Ctrl+Shift+P → "Optimize for Cost"
 - **Peace of Mind**: Never hit context limits again
 
 ## 🚨 **Breakthrough Features**
+
+### **🔧 WORLD'S FIRST Auto-Fix for Cline Token Limits**
+**REVOLUTIONARY ONE-CLICK SOLUTION:**
+- **Problem**: Cline artificially limits ALL Anthropic models to 8192 tokens (Claude 4 Sonnet should be 64,000!)
+- **Solution**: Automatic detection and one-click fix with backup creation
+- **Models Fixed**: Claude 4 Sonnet (8192→64000), Claude 4 Opus (8192→32000), Claude 3.7 Sonnet (8192→64000)
+- **Backup Protection**: Automatic backup before any changes
+- **Zero Risk**: Easy restoration if problems occur
+- **GitHub Issue**: Addresses [Cline Issue #4149](https://github.com/cline/cline/issues/4149)
 
 ### **🔄 Real-time Token Tracking**
 **ACCURATE. INSTANT. PERFORMANCE-OPTIMIZED:**

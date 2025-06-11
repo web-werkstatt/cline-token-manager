@@ -10,6 +10,7 @@ import { ClineContextInterceptor } from './core/context/cline-context-intercepto
 import { SmartFileSelector } from './core/context/smart-file-selector';
 import { TruncationDetector } from './core/truncation-detector';
 import { AdminDashboard } from './dashboard/admin-dashboard';
+import { OptimizationDashboardProvider } from './webview/optimization-dashboard-provider';
 
 let tokenManager: TokenManager;
 let smartFileCondenser: SmartFileCondenser;
@@ -67,6 +68,13 @@ export async function activate(context: vscode.ExtensionContext) {
     // 🎛️ ADMIN: Initialize Professional Analytics Dashboard
     adminDashboard = AdminDashboard.getInstance();
     console.log('🎛️ Admin Dashboard activated - Professional analytics ready!');
+
+    // 🎛️ SIDEBAR: Register Optimization Dashboard WebView Provider
+    const optimizationDashboardProvider = new OptimizationDashboardProvider(context.extensionUri);
+    context.subscriptions.push(
+        vscode.window.registerWebviewViewProvider(OptimizationDashboardProvider.viewType, optimizationDashboardProvider)
+    );
+    console.log('🎛️ Sidebar Optimization Dashboard registered - Real-time token tracking ready!');
 
     // 🎛️ ADMIN DASHBOARD COMMANDS
     context.subscriptions.push(
@@ -168,6 +176,17 @@ export async function activate(context: vscode.ExtensionContext) {
             
             // Use public method
             panel.webview.html = clineTokenLimitDetector.getFixInstructionsHtml();
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('cline-token-manager.autoFixTokenLimits', async () => {
+            const result = await clineTokenLimitDetector.checkClineInstallation();
+            if (result.hasTokenLimitIssue && result.affectedModels.length > 0) {
+                await clineTokenLimitDetector.showTokenLimitWarning(result.affectedModels);
+            } else {
+                vscode.window.showInformationMessage('✅ Keine Token-Limit-Probleme gefunden, die behoben werden müssen!');
+            }
         })
     );
 

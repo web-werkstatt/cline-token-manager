@@ -1,8 +1,8 @@
 {
   "name": "cline-token-manager-beta",
   "displayName": "Cline Token Manager v3.17.11 - Universal Context Optimizer",
-  "description": "Universal context optimization engine that reduces AI token usage by 76% + WORLD'S FIRST Cline Token Limit Fix - Compatible with Cline v3.17.11 and Claude Code",
-  "version": "1.1.1",
+  "description": "Universal context optimization engine that reduces AI token usage by 76% + WORLD'S FIRST Auto-Fix for Cline Token Limits (One-Click Solution) - Compatible with Cline v3.17.11 and Claude Code",
+  "version": "1.1.3",
   "publisher": "webwerkstatt",
   "author": "Joseph Kisler - Webwerkstatt",
   "license": "MIT",
@@ -203,6 +203,12 @@
         "title": "Show Token Limit Fix Instructions",
         "category": "Cline Token Manager",
         "icon": "$(tools)"
+      },
+      {
+        "command": "cline-token-manager.autoFixTokenLimits",
+        "title": "Auto-Fix Cline Token Limits",
+        "category": "Cline Token Manager",
+        "icon": "$(wrench)"
       }
     ],
     "configuration": {
