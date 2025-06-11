@@ -375,7 +375,7 @@ export async function activate(context: vscode.ExtensionContext) {
 4. **Monitor status bar**: Watch real-time token tracking
 
 ### Feedback & Support
-- **GitHub Issues**: https://github.com/web-werkstatt/cline-token-manager/issues
+- **GitHub Issues**: https://github.com/web-werkstatt/ai-context-optimizer/issues
 - **Email Support**: support@web-werkstatt.at
 
 ---

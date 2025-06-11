@@ -1,52 +1,117 @@
-# Dependencies
+# AI Context Optimizer - .gitignore
+# Repository: https://github.com/web-werkstatt/ai-context-optimizer
+
+# ===========================================
+# VS Code Extension Build Artifacts
+# ===========================================
+*.vsix
+out/
+dist/
 node_modules/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build outputs
-dist/
-out/
-*.vsix
-!releases/**/*.vsix
-
-# IDE files
+# ===========================================
+# Development & Compilation
+# ===========================================
+.vscode-test/
 .vscode/settings.json
 .vscode/launch.json
 .vscode/extensions.json
+*.tsbuildinfo
+coverage/
 
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Temporary files
-*.tmp
-*.temp
-
-# German documentation files (not for international repo)
-CLAUDE.md
-COMMUNITY-SETUP-EINFACH.md
-*UNICORN*.md
-*INVESTMENT*.md
-*MARKET-ANALYSIS*.md
-*BUSINESS-STRATEGY*.md
-*PRODUCT-ROADMAP*.md
-*TECHNICAL-ARCHITECTURE*.md
-*SPRINT-ROADMAP*.md
-*PERFORMANCE-VALIDATION*.md
-*TOKEN-REDUCTION*.md
-*CORE-ENGINE*.md
-*MVP-CORE*.md
+# ===========================================
+# Internal Documentation (NOT for public repo)
+# ===========================================
+internal-docs/
+docs/sprints/
+docs/analysis/
 archive/
 assets/
 development/
+
+# Business Strategy Documents
+BUSINESS-*.md
+INVESTMENT-*.md
+MARKET-*.md
+PAPERLESS-*.md
+
+# Marketing & Community Materials  
+COMMUNITY-*.md
+REDDIT-*.md
+GITHUB-LAUNCH-*.md
+
+# Internal Development Notes
+CLAUDE.md
+BETA-LAUNCH-*.md
+SPRINT-*.md
+CORE-ENGINE-*.md
+PYTHON-GATEWAY-*.md
+FEEDBACK-*.md
+GITHUB-DISCUSSIONS-*.md
+
+# Experimental Features
+PYTHON-UNIVERSAL-*.md
+CURSOR-EXPERIENCE-*.md
+MVP-*.md
+PRODUCT-ROADMAP-*.md
+
+# ===========================================
+# Environment & Sensitive Information
+# ===========================================
+.env
+.env.*
+*.key
+*.pem
+config/local.json
+secrets/
+
+# ===========================================
+# OS & Editor Files
+# ===========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+.swp
+.swo
+
+# ===========================================
+# Temporary Files
+# ===========================================
+*.tmp
+*.temp
+.tmp/
+.cache/
+.temp/
+
+# ===========================================
+# Website Development (Internal)
+# ===========================================
+aicontextoptimizer-com/
+clineoptimizer-com/
+
+# ===========================================
+# Allow Essential Public Documentation
+# ===========================================
+!README.md
+!README_DE.md
+!INSTALLATION-GUIDE.md
+!CHANGELOG.md
+!RELEASE-NOTES-v*.md
+!LICENSE
+!.github/
+
+# Allow Technical Documentation (User-Relevant)
+!CACHE-EXPLOSION-SOLUTION.md
+!PERFORMANCE-VALIDATION.md
+!TEST-REPORT.md
+!TOKEN-ESTIMATION-FIX.md
+!TOKEN-REDUCTION-MEASUREMENTS.md

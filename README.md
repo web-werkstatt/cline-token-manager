@@ -6,8 +6,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://marketplace.visualstudio.com/)
-[![Universal](https://img.shields.io/badge/Universal-AI%20Tools-green.svg)](https://github.com/web-werkstatt/cline-token-manager)
-[![Cache Prevention](https://img.shields.io/badge/Cache-Explosion%20Prevention-red.svg)](https://github.com/web-werkstatt/cline-token-manager)
+[![Universal](https://img.shields.io/badge/Universal-AI%20Tools-green.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
+[![Cache Prevention](https://img.shields.io/badge/Cache-Explosion%20Prevention-red.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
 
 🇬🇧 **English Version** | 🇩🇪 **[Deutsche Version](README_DE.md)**
 
@@ -16,7 +16,7 @@
 ## 📦 **Download & Installation**
 
 ### **Latest Release:**
-**[📥 Download v1.1.1-beta - WORLD'S FIRST Token Limit Fix](https://github.com/web-werkstatt/cline-token-manager/releases/)**
+**[📥 Download v1.1.1-beta - WORLD'S FIRST Token Limit Fix](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
 - **🚨 NEW**: Cline Token Limit Problem Detection & Fix
 - **Compatible**: Cline v3.17.11 + Claude Code Ready
 - **Features**: Universal provider support, 76% token reduction + Token limit fixes
@@ -24,7 +24,7 @@
 - **Status**: Beta (stable features + cutting-edge fixes)
 
 ### **Stable Release:**
-**[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/cline-token-manager/releases/tag/v1.1.0-cline-v3.17.11)**
+**[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/ai-context-optimizer/releases/tag/v1.1.0-cline-v3.17.11)**
 - **Compatible**: Cline v3.17.11 + Claude Code Ready
 - **Features**: Universal provider support, 76% token reduction  
 - **Size**: 10.7 MB
@@ -376,7 +376,7 @@ The extension works out of the box with smart defaults. Optional settings:
 
 We're currently in beta testing phase. Help us improve:
 
-- **GitHub Issues**: [Report bugs/features](https://github.com/web-werkstatt/cline-token-manager/issues)
+- **GitHub Issues**: [Report bugs/features](https://github.com/web-werkstatt/ai-context-optimizer/issues)
 - **Email**: support@web-werkstatt.at
 - **Discussions**: Use GitHub Discussions for questions
 
@@ -417,7 +417,7 @@ Contributions are welcome! Please read our contributing guidelines and submit pu
 ## 📞 **Support**
 
 - **Email**: support@web-werkstatt.at
-- **GitHub Issues**: [Create an issue](https://github.com/web-werkstatt/cline-token-manager/issues)
+- **GitHub Issues**: [Create an issue](https://github.com/web-werkstatt/ai-context-optimizer/issues)
 
 ---
 

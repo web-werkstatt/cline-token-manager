@@ -25,14 +25,14 @@ Thank you for your interest in contributing to Cline Token Manager! We're excite
 - Consider implementation complexity
 
 ### 💬 Community Support
-- Answer questions in [GitHub Discussions](https://github.com/web-werkstatt/cline-token-manager/discussions)
+- Answer questions in [GitHub Discussions](https://github.com/web-werkstatt/ai-context-optimizer/discussions)
 - Help other users with setup and configuration
 - Share your optimization strategies
 - Provide feedback on new features
 
 ### 🛠️ Code Contributions
-- Look for [`good first issue`](https://github.com/web-werkstatt/cline-token-manager/labels/good%20first%20issue) labels
-- Check our [project roadmap](https://github.com/web-werkstatt/cline-token-manager/projects)
+- Look for [`good first issue`](https://github.com/web-werkstatt/ai-context-optimizer/labels/good%20first%20issue) labels
+- Check our [project roadmap](https://github.com/web-werkstatt/ai-context-optimizer/projects)
 - Follow our coding standards and patterns
 - Add tests for new features
 

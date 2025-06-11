@@ -6,8 +6,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://marketplace.visualstudio.com/)
-[![Universal](https://img.shields.io/badge/Universal-AI%20Tools-green.svg)](https://github.com/web-werkstatt/cline-token-manager)
-[![Cache Prevention](https://img.shields.io/badge/Cache-Explosion%20Prevention-red.svg)](https://github.com/web-werkstatt/cline-token-manager)
+[![Universal](https://img.shields.io/badge/Universal-AI%20Tools-green.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
+[![Cache Prevention](https://img.shields.io/badge/Cache-Explosion%20Prevention-red.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
 
 🇬🇧 **[English Version](README.md)** | 🇩🇪 **Deutsche Version**
 
@@ -16,7 +16,7 @@
 ## 📦 **Download & Installation**
 
 ### **Neueste Version:**
-**[📥 Download v1.1.1-beta - WELTWEIT ERSTER Token Limit Fix](https://github.com/web-werkstatt/cline-token-manager/releases/)**
+**[📥 Download v1.1.1-beta - WELTWEIT ERSTER Token Limit Fix](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
 - **🚨 NEU**: Cline Token Limit Problem Erkennung & Fix
 - **Kompatibel**: Cline v3.17.11 + Claude Code bereit
 - **Features**: Universal Provider Support, 76% Token-Reduktion + Token Limit Fixes
@@ -24,7 +24,7 @@
 - **Status**: Beta (stabile Features + cutting-edge Fixes)
 
 ### **Stabile Version:**
-**[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/cline-token-manager/releases/tag/v1.1.0-cline-v3.17.11)**
+**[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/ai-context-optimizer/releases/tag/v1.1.0-cline-v3.17.11)**
 - **Kompatibel**: Cline v3.17.11 + Claude Code bereit
 - **Features**: Universal Provider Support, 76% Token-Reduktion
 - **Größe**: 10.7 MB
@@ -314,7 +314,7 @@ Die Extension funktioniert sofort mit intelligenten Standardwerten. Optionale Ei
 
 Wir sind aktuell in der Beta-Testing-Phase. Hilf uns beim Verbessern:
 
-- **GitHub Issues**: [Bugs/Features melden](https://github.com/web-werkstatt/cline-token-manager/issues)
+- **GitHub Issues**: [Bugs/Features melden](https://github.com/web-werkstatt/ai-context-optimizer/issues)
 - **E-Mail**: support@web-werkstatt.at
 - **Diskussionen**: Nutze GitHub Discussions für Fragen
 
@@ -355,7 +355,7 @@ Beiträge sind willkommen! Bitte lies unsere Contributing-Guidelines und reiche 
 ## 📞 **Support**
 
 - **E-Mail**: support@web-werkstatt.at
-- **GitHub Issues**: [Issue erstellen](https://github.com/web-werkstatt/cline-token-manager/issues)
+- **GitHub Issues**: [Issue erstellen](https://github.com/web-werkstatt/ai-context-optimizer/issues)
 
 ---
 

@@ -157,7 +157,7 @@ main                    # Stable production releases
 ## 👥 **Community**
 
 ### **Professional Development**:
-- **GitHub Repository**: https://github.com/web-werkstatt/cline-token-manager-universal
+- **GitHub Repository**: https://github.com/web-werkstatt/ai-context-optimizer
 - **Branch**: `cline-v3.17.11` (this release)
 - **Issues**: Professional bug reporting with templates
 - **Discussions**: Community-driven feature development

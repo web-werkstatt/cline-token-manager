@@ -204,7 +204,7 @@ After optimization:
 ## 🆘 **Getting Help**
 
 ### **Beta Support Channels:**
-- **GitHub Issues**: [Report bugs/features](https://github.com/web-werkstatt/cline-token-manager/issues)
+- **GitHub Issues**: [Report bugs/features](https://github.com/web-werkstatt/ai-context-optimizer/issues)
 - **Discord**: #cline-token-manager channel
 - **Email**: support@web-werkstatt.at
 - **Direct Message**: Contact beta team directly
