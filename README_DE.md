@@ -15,20 +15,33 @@
 
 ## 📦 **Download & Installation**
 
-### **Aktuelle Version:**
+### **Neueste Version:**
+**[📥 Download v1.1.1-beta - WELTWEIT ERSTER Token Limit Fix](https://github.com/web-werkstatt/cline-token-manager/releases/)**
+- **🚨 NEU**: Cline Token Limit Problem Erkennung & Fix
+- **Kompatibel**: Cline v3.17.11 + Claude Code bereit
+- **Features**: Universal Provider Support, 76% Token-Reduktion + Token Limit Fixes
+- **Größe**: 10.7 MB
+- **Status**: Beta (stabile Features + cutting-edge Fixes)
+
+### **Stabile Version:**
 **[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/cline-token-manager/releases/tag/v1.1.0-cline-v3.17.11)**
 - **Kompatibel**: Cline v3.17.11 + Claude Code bereit
 - **Features**: Universal Provider Support, 76% Token-Reduktion
 - **Größe**: 10.7 MB
-- **Status**: Produktionsbereit
+- **Status**: Produktionsbereit (ohne Token Limit Fixes)
 
 ### **Schnelle Installation:**
 ```bash
-1. Download cline-token-manager-v3.17.11-1.1.0.vsix
+# Neueste Beta (empfohlen):
+1. Download cline-token-manager-beta-1.1.1.vsix
 2. VS Code öffnen
 3. Ctrl+Shift+P → "Extensions: Install from VSIX"
-4. Downloaded Datei auswählen
+4. Heruntergeladene Datei auswählen
 5. VS Code neustarten → Fertig!
+
+# Stabile Version:
+1. Download cline-token-manager-v3.17.11-1.1.0.vsix
+2. Gleiche Installationsschritte befolgen
 ```
 
 ---

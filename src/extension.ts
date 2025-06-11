@@ -5,8 +5,10 @@ import { SmartFileCondenser } from './core/context/smart-file-condenser';
 import { TaskCompletionDetector } from './core/task-completion-detector';
 import { ClineWebviewInjector } from './cline-integration/cline-webview-injector';
 import { ClineCommandBridge } from './cline-integration/cline-command-bridge';
+import { ClineTokenLimitDetector } from './cline-integration/cline-token-limit-detector';
 import { ClineContextInterceptor } from './core/context/cline-context-interceptor';
 import { SmartFileSelector } from './core/context/smart-file-selector';
+import { TruncationDetector } from './core/truncation-detector';
 import { AdminDashboard } from './dashboard/admin-dashboard';
 
 let tokenManager: TokenManager;
@@ -14,8 +16,10 @@ let smartFileCondenser: SmartFileCondenser;
 let taskCompletionDetector: TaskCompletionDetector;
 let clineWebviewInjector: ClineWebviewInjector;
 let clineCommandBridge: ClineCommandBridge;
+let clineTokenLimitDetector: ClineTokenLimitDetector;
 let clineContextInterceptor: ClineContextInterceptor;
 let smartFileSelector: SmartFileSelector;
+let truncationDetector: TruncationDetector;
 let adminDashboard: AdminDashboard;
 
 export async function activate(context: vscode.ExtensionContext) {
@@ -35,6 +39,15 @@ export async function activate(context: vscode.ExtensionContext) {
     // Initialize Cline integration
     clineWebviewInjector = ClineWebviewInjector.getInstance();
     clineCommandBridge = ClineCommandBridge.getInstance();
+    
+    // Initialize Cline token limit detector
+    clineTokenLimitDetector = ClineTokenLimitDetector.getInstance();
+    
+    // Check for token limit issues on activation
+    await clineTokenLimitDetector.detectAndWarnOnActivation();
+    
+    // Initialize truncation detector
+    truncationDetector = TruncationDetector.getInstance(tokenManager);
     
     // Register Cline command bridge
     clineCommandBridge.registerCommands(context);
@@ -129,6 +142,32 @@ export async function activate(context: vscode.ExtensionContext) {
             } catch (error) {
                 vscode.window.showErrorMessage(`BI dashboard failed: ${error}`);
             }
+        })
+    );
+
+    // Token limit detector commands
+    context.subscriptions.push(
+        vscode.commands.registerCommand('cline-token-manager.checkTokenLimits', async () => {
+            const result = await clineTokenLimitDetector.checkClineInstallation();
+            if (result.hasTokenLimitIssue) {
+                await clineTokenLimitDetector.showTokenLimitWarning(result.affectedModels);
+            } else {
+                vscode.window.showInformationMessage('✅ Keine Token-Limit-Probleme gefunden!');
+            }
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('cline-token-manager.showTokenLimitFix', async () => {
+            const panel = vscode.window.createWebviewPanel(
+                'clineTokenLimitFix',
+                'Cline Token Limit beheben',
+                vscode.ViewColumn.One,
+                { enableScripts: true }
+            );
+            
+            // Use public method
+            panel.webview.html = clineTokenLimitDetector.getFixInstructionsHtml();
         })
     );
 

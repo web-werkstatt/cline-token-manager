@@ -15,20 +15,33 @@
 
 ## 📦 **Download & Installation**
 
-### **Current Release:**
+### **Latest Release:**
+**[📥 Download v1.1.1-beta - WORLD'S FIRST Token Limit Fix](https://github.com/web-werkstatt/cline-token-manager/releases/)**
+- **🚨 NEW**: Cline Token Limit Problem Detection & Fix
+- **Compatible**: Cline v3.17.11 + Claude Code Ready
+- **Features**: Universal provider support, 76% token reduction + Token limit fixes
+- **Size**: 10.7 MB
+- **Status**: Beta (stable features + cutting-edge fixes)
+
+### **Stable Release:**
 **[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/cline-token-manager/releases/tag/v1.1.0-cline-v3.17.11)**
 - **Compatible**: Cline v3.17.11 + Claude Code Ready
-- **Features**: Universal provider support, 76% token reduction
+- **Features**: Universal provider support, 76% token reduction  
 - **Size**: 10.7 MB
-- **Status**: Production ready
+- **Status**: Production ready (without token limit fixes)
 
 ### **Quick Installation:**
 ```bash
-1. Download cline-token-manager-v3.17.11-1.1.0.vsix
+# Latest Beta (recommended):
+1. Download cline-token-manager-beta-1.1.1.vsix
 2. Open VS Code
 3. Ctrl+Shift+P → "Extensions: Install from VSIX"
 4. Select downloaded file
 5. Restart VS Code → Ready!
+
+# Stable Version:
+1. Download cline-token-manager-v3.17.11-1.1.0.vsix
+2. Follow same installation steps
 ```
 
 ---
@@ -93,11 +106,49 @@ Cursor proved that intelligent context management is worth $400M+ in value. We t
 └── TypeScript fallback when Python unavailable
 ```
 
+## ⚠️ **CRITICAL: Cline Token Limit Problem (Solved!)**
+
+### **🚨 Issue Discovered & Fixed**
+Cline artificially limits ALL Anthropic models to **8,192 output tokens**, even though newer models support much higher limits:
+
+| Model | Cline Limit | Official Limit | Beta Potential |
+|-------|-------------|----------------|---------------|
+| Claude 4 Sonnet | 8,192 | **64,000** | - |
+| Claude 4 Opus | 8,192 | **32,000** | - |  
+| Claude 3.7 Sonnet | 8,192 | **64,000** | **128,000** |
+| Claude 3.5 Sonnet | 8,192 | 8,192 ✓ | 8,192 |
+
+### **🛠️ Our Integrated Solution:**
+```
+✅ Automatic Problem Detection:
+├── Extension startup scan
+├── Real-time truncation detection  
+├── Smart warning system
+└── One-click fix instructions
+
+✅ Advanced Features:
+├── Response truncation analysis
+├── Pattern-based detection algorithms
+├── Interactive fix wizards
+└── Comprehensive documentation
+```
+
+### **Quick Commands:**
+```bash
+Ctrl+Shift+P → "Cline Token Manager: Check Token Limits"
+Ctrl+Shift+P → "Cline Token Manager: Show Fix Instructions"
+```
+
+**GitHub Issue Tracked:** [cline/cline#4149](https://github.com/cline/cline/issues/4149)
+
+---
+
 ### **Our Complementary Advantages:**
 ```
 ✅ Universal Platform (works with VS Code + ANY AI tool)
 ✅ Real-time Cost Tracking (transparent cost monitoring)
 ✅ Cache-Explosion Prevention (specialized for Cline's architecture)
+✅ Token Limit Problem Detection & Fix (world's first solution)
 ✅ Open Source & Free (MIT licensed, community-driven)
 ✅ Professional Analytics (SaaS-ready admin dashboard)
 ✅ Python ML Engine (advanced optimization algorithms)
