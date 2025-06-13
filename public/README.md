@@ -35,12 +35,14 @@ Love using Cline Token Manager? Help us keep developing revolutionary features!
 - **Size**: 11.7 MB
 - **Status**: Beta (cutting-edge universal platform)
 
-### **Stable Release:**
-**[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/ai-context-optimizer/releases/tag/v1.1.0-cline-v3.17.11)**
-- **Compatible**: Cline v3.17.11 + Claude Code Ready
-- **Features**: Universal provider support, 76% token reduction  
-- **Size**: 10.7 MB
-- **Status**: Production ready (without token limit fixes)
+### **Alternative Latest:**
+**[📥 Download v1.2.0-beta - Rule Injection Focus](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
+- **🔧 RULE INJECTION**: Guaranteed custom rules that actually work
+- **🎯 REVOLUTIONARY**: World's first Auto-Fix for Cline token limits
+- **Compatible**: Cline v3.17.11 + Claude Code + Universal AI tools
+- **Features**: Rule Injection, Auto-Fix, Universal Provider Support
+- **Size**: 11.7 MB
+- **Status**: Beta (rule injection specialized)
 
 ### **Quick Installation:**
 ```bash
