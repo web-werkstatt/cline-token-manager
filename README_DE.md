@@ -6,8 +6,10 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://marketplace.visualstudio.com/)
-[![GitHub Stars](https://img.shields.io/github/stars/cline-optimized-project/cline-token-manager.svg)](https://github.com/cline-optimized-project/cline-token-manager/stargazers)
-[![Auto-Fix](https://img.shields.io/badge/Auto--Fix-Token%20Limits-red.svg)](https://github.com/cline-optimized-project/cline-token-manager)
+[![GitHub Stars](https://img.shields.io/github/stars/web-werkstatt/ai-context-optimizer.svg?style=social)](https://github.com/web-werkstatt/ai-context-optimizer/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/web-werkstatt/ai-context-optimizer.svg?style=social)](https://github.com/web-werkstatt/ai-context-optimizer/network/members)
+[![Auto-Fix](https://img.shields.io/badge/Auto--Fix-Token%20Limits-red.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
+[![Contributors](https://img.shields.io/github/contributors/web-werkstatt/ai-context-optimizer.svg)](https://github.com/web-werkstatt/ai-context-optimizer/graphs/contributors)
 
 🇬🇧 **[English Version](README.md)** | 🇩🇪 **Deutsche Version**
 
@@ -19,6 +21,8 @@
 [![PayPal](https://img.shields.io/badge/PayPal-Spenden-blue.svg)](https://paypal.me/webwerwerkstatt)
 
 Liebst du Cline Token Manager? Hilf uns dabei, revolutionäre Features weiter zu entwickeln!
+
+⭐ **[Gib diesem Projekt einen Stern](https://github.com/web-werkstatt/ai-context-optimizer)**, wenn es dir Geld bei AI API-Kosten spart!
 
 ---
 
