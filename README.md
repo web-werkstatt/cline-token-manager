@@ -25,7 +25,7 @@ Love using Cline Token Manager? Help us keep developing revolutionary features!
 ## 📦 **Download & Installation**
 
 ### **Latest Release:**
-**[📥 Download v1.2.0-beta - Universal AI Platform](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
+**[📥 Download v1.2.0-beta - Universal AI Platform](https://github.com/web-werkstatt/ai-context-optimizer/tree/main/releases/beta)**
 - **🚀 UNIVERSAL**: Works with Cline, Copilot, and ANY AI tool
 - **🎯 REVOLUTIONARY**: World's first Auto-Fix for Cline token limits
 - **🔧 RULE INJECTION**: Guaranteed custom rules that actually work
@@ -34,15 +34,17 @@ Love using Cline Token Manager? Help us keep developing revolutionary features!
 - **Features**: Auto-Fix, Rule Injection, Universal Provider Support, Cache Prevention
 - **Size**: 11.7 MB
 - **Status**: Beta (cutting-edge universal platform)
+- **📥 Direct**: [Download cline-token-manager-beta-1.2.0-universal-ai-platform.vsix](https://github.com/web-werkstatt/ai-context-optimizer/blob/main/releases/beta/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix?raw=true)
 
 ### **Alternative Latest:**
-**[📥 Download v1.2.0-beta - Rule Injection Focus](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
+**[📥 Download v1.2.0-beta - Rule Injection Focus](https://github.com/web-werkstatt/ai-context-optimizer/tree/main/releases/beta)**
 - **🔧 RULE INJECTION**: Guaranteed custom rules that actually work
 - **🎯 REVOLUTIONARY**: World's first Auto-Fix for Cline token limits
 - **Compatible**: Cline v3.17.11 + Claude Code + Universal AI tools
 - **Features**: Rule Injection, Auto-Fix, Universal Provider Support
 - **Size**: 11.7 MB
 - **Status**: Beta (rule injection specialized)
+- **📥 Direct**: [Download cline-token-manager-beta-1.2.0-rule-injection.vsix](https://github.com/web-werkstatt/ai-context-optimizer/blob/main/releases/beta/cline-token-manager-beta-1.2.0-rule-injection.vsix?raw=true)
 
 ### **Quick Installation:**
 ```bash
@@ -175,7 +177,7 @@ Ctrl+Shift+P → "Cline Token Manager: Show Fix Instructions"
 ## ⚡ **Quick Start - Get Cache-Explosion Prevention NOW!**
 
 ### **🚨 Installation (2 minutes)**
-1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](https://github.com/web-werkstatt/ai-context-optimizer/raw/main/releases/beta/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix) (11.7 MB)
+1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](https://github.com/web-werkstatt/ai-context-optimizer/blob/main/releases/beta/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix?raw=true) (11.7 MB)
 2. **Install**: Open VS Code → `Ctrl+Shift+P` → "Extensions: Install from VSIX..."
 3. **Activate**: Extension activates automatically with Cline
 4. **Start Saving**: Immediate cache-explosion prevention begins

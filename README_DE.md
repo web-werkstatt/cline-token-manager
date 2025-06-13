@@ -25,7 +25,7 @@ Liebst du Cline Token Manager? Hilf uns dabei, revolutionäre Features weiter zu
 ## 📦 **Download & Installation**
 
 ### **Neueste Version:**
-**[📥 Download v1.2.0-beta - Universelle AI Plattform](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
+**[📥 Download v1.2.0-beta - Universelle AI Plattform](https://github.com/web-werkstatt/ai-context-optimizer/tree/main/releases/beta)**
 - **🚀 UNIVERSAL**: Funktioniert mit Cline, Copilot und JEDEM AI-Tool
 - **🎯 REVOLUTIONÄR**: Weltweit erstes Auto-Fix für Cline Token Limits
 - **🔧 RULE INJECTION**: Garantierte Custom Rules die tatsächlich funktionieren
@@ -34,15 +34,17 @@ Liebst du Cline Token Manager? Hilf uns dabei, revolutionäre Features weiter zu
 - **Features**: Auto-Fix, Rule Injection, Universal Provider Support, Cache Prevention
 - **Größe**: 11.7 MB
 - **Status**: Beta (hochmoderne universelle Plattform)
+- **📥 Direkt**: [Download cline-token-manager-beta-1.2.0-universal-ai-platform.vsix](https://github.com/web-werkstatt/ai-context-optimizer/blob/main/releases/beta/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix?raw=true)
 
 ### **Alternative Neueste:**
-**[📥 Download v1.2.0-beta - Rule Injection Fokus](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
+**[📥 Download v1.2.0-beta - Rule Injection Fokus](https://github.com/web-werkstatt/ai-context-optimizer/tree/main/releases/beta)**
 - **🔧 RULE INJECTION**: Garantierte Custom Rules die tatsächlich funktionieren
 - **🎯 REVOLUTIONÄR**: Weltweit erstes Auto-Fix für Cline Token Limits
 - **Kompatibel**: Cline v3.17.11 + Claude Code + Universelle AI-Tools
 - **Features**: Rule Injection, Auto-Fix, Universal Provider Support
 - **Größe**: 11,7 MB
 - **Status**: Beta (Rule Injection spezialisiert)
+- **📥 Direkt**: [Download cline-token-manager-beta-1.2.0-rule-injection.vsix](https://github.com/web-werkstatt/ai-context-optimizer/blob/main/releases/beta/cline-token-manager-beta-1.2.0-rule-injection.vsix?raw=true)
 
 ### **Schnelle Installation:**
 ```bash
@@ -137,7 +139,7 @@ Cursor bewies, dass intelligentes Kontext-Management $400M+ Wert schafft. Wir na
 ## ⚡ **Schnellstart - Cache-Explosion Prevention JETZT!**
 
 ### **🚨 Installation (2 Minuten)**
-1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](https://github.com/web-werkstatt/ai-context-optimizer/raw/main/releases/beta/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix) (11,7 MB)
+1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](https://github.com/web-werkstatt/ai-context-optimizer/blob/main/releases/beta/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix?raw=true) (11,7 MB)
 2. **Installation**: VS Code öffnen → `Strg+Shift+P` → "Extensions: Install from VSIX..."
 3. **Aktivierung**: Extension aktiviert sich automatisch mit Cline
 4. **Sofort sparen**: Cache-Explosion Prevention beginnt sofort
