@@ -25,15 +25,15 @@ Liebst du Cline Token Manager? Hilf uns dabei, revolutionäre Features weiter zu
 ## 📦 **Download & Installation**
 
 ### **Neueste Version:**
-**[📥 Download v1.1.3-beta - PERFEKTIONIERTES Auto-Fix für Token Limits](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
-- **🎯 PERFEKTIONIERT**: Echter Ein-Klick Auto-Fix (keine komplexen Dialoge!)
-- **✨ PROFESSIONELL**: Modal-Dialoge mit intelligenter Token-Anzeige (8192 → 64000)
-- **🔧 AUTOMATISCH**: Sofortige Backup-Erstellung und Fix-Anwendung
-- **🚨 GELÖST**: Cline begrenzt künstlich alle Modelle auf 8192 Token
-- **Kompatibel**: Cline v3.17.11 + Claude Code bereit
-- **Features**: Universelle Provider-Unterstützung, 76% Token-Reduktion + Perfektionierte Auto-Fixes
-- **Größe**: 10.7 MB
-- **Status**: Beta (stabile Features + perfektionierte Auto-Fixes)
+**[📥 Download v1.2.0-beta - Universelle AI Plattform](https://github.com/web-werkstatt/ai-context-optimizer/releases/)**
+- **🚀 UNIVERSAL**: Funktioniert mit Cline, Copilot und JEDEM AI-Tool
+- **🎯 REVOLUTIONÄR**: Weltweit erstes Auto-Fix für Cline Token Limits
+- **🔧 RULE INJECTION**: Garantierte Custom Rules die tatsächlich funktionieren
+- **⚡ PERFORMANCE**: 76% Token-Reduktion + ML-Optimierung
+- **Kompatibel**: Cline v3.17.11 + Claude Code + Universelle AI-Tools
+- **Features**: Auto-Fix, Rule Injection, Universal Provider Support, Cache Prevention
+- **Größe**: 11.7 MB
+- **Status**: Beta (hochmoderne universelle Plattform)
 
 ### **Stabile Version:**
 **[📥 Download v1.1.0 - Universal Provider Support](https://github.com/web-werkstatt/ai-context-optimizer/releases/tag/v1.1.0-cline-v3.17.11)**
@@ -45,15 +45,15 @@ Liebst du Cline Token Manager? Hilf uns dabei, revolutionäre Features weiter zu
 ### **Schnelle Installation:**
 ```bash
 # Neueste Beta (empfohlen):
-1. Download cline-token-manager-beta-1.1.3.vsix
+1. Download cline-token-manager-beta-1.2.0-universal-ai-platform.vsix
 2. VS Code öffnen
 3. Ctrl+Shift+P → "Extensions: Install from VSIX"
 4. Heruntergeladene Datei auswählen
 5. VS Code neustarten → Fertig!
 6. Verwende Ctrl+Shift+P → "Cline Token Manager: Auto-Fix Token Limits" für Ein-Klick-Fixes!
 
-# Stabile Version:
-1. Download cline-token-manager-v3.17.11-1.1.0.vsix
+# Alternative Neueste:
+1. Download cline-token-manager-beta-1.2.0-rule-injection.vsix (Rule Injection Fokus)
 2. Gleiche Installationsschritte befolgen
 ```
 
@@ -135,7 +135,7 @@ Cursor bewies, dass intelligentes Kontext-Management $400M+ Wert schafft. Wir na
 ## ⚡ **Schnellstart - Cache-Explosion Prevention JETZT!**
 
 ### **🚨 Installation (2 Minuten)**
-1. **Download**: [`cline-token-manager-beta-1.0.0.vsix`](./releases/beta/cline-token-manager-beta-1.0.0.vsix) (10,46 MB)
+1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](./public/releases/community/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix) (11,7 MB)
 2. **Installation**: VS Code öffnen → `Strg+Shift+P` → "Extensions: Install from VSIX..."
 3. **Aktivierung**: Extension aktiviert sich automatisch mit Cline
 4. **Sofort sparen**: Cache-Explosion Prevention beginnt sofort
