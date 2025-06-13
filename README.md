@@ -506,7 +506,6 @@ If Cline Token Manager saves you money and improves your AI coding workflow, con
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg?style=for-the-badge)](https://coff.ee/webwerkstatt)
 [![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg?style=for-the-badge)](https://paypal.me/webwerwerkstatt)
-[![GitHub Sponsor](https://img.shields.io/badge/GitHub-Sponsor-pink.svg?style=for-the-badge)](https://github.com/sponsors/webwerkstatt)
 
 **Every donation helps us:**
 - 🚀 Develop more breakthrough features
