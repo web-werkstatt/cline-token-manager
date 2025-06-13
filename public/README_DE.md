@@ -16,7 +16,7 @@
 ## ☕ **Unterstütze dieses Projekt**
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg)](https://buymeacoffee.com/webwerkstatt)
-[![PayPal](https://img.shields.io/badge/PayPal-Spenden-blue.svg)](https://paypal.me/webwerkstatt)
+[![PayPal](https://img.shields.io/badge/PayPal-Spenden-blue.svg)](https://paypal.me/webwerwerkstatt)
 
 Liebst du Cline Token Manager? Hilf uns dabei, revolutionäre Features weiter zu entwickeln!
 
@@ -443,7 +443,7 @@ Cursor's Erfolg beweist, dass intelligentes Kontext-Management bedeutenden Wert 
 Wenn Cline Token Manager dir Geld spart und deinen AI-Coding-Workflow verbessert, unterstütze bitte unsere Entwicklung:
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg?style=for-the-badge)](https://buymeacoffee.com/webwerkstatt)
-[![PayPal](https://img.shields.io/badge/PayPal-Spenden-blue.svg?style=for-the-badge)](https://paypal.me/webwerkstatt)
+[![PayPal](https://img.shields.io/badge/PayPal-Spenden-blue.svg?style=for-the-badge)](https://paypal.me/webwerwerkstatt)
 [![GitHub Sponsor](https://img.shields.io/badge/GitHub-Sponsor-pink.svg?style=for-the-badge)](https://github.com/sponsors/webwerkstatt)
 
 **Jede Spende hilft uns:**

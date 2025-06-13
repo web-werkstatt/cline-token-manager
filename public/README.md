@@ -16,7 +16,7 @@
 ## ☕ **Support This Project**
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg)](https://buymeacoffee.com/webwerkstatt)
-[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg)](https://paypal.me/webwerkstatt)
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg)](https://paypal.me/webwerwerkstatt)
 
 Love using Cline Token Manager? Help us keep developing revolutionary features!
 
@@ -505,7 +505,7 @@ Cursor's success proves that intelligent context management creates significant 
 If Cline Token Manager saves you money and improves your AI coding workflow, consider supporting our development:
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg?style=for-the-badge)](https://buymeacoffee.com/webwerkstatt)
-[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg?style=for-the-badge)](https://paypal.me/webwerkstatt)
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg?style=for-the-badge)](https://paypal.me/webwerwerkstatt)
 [![GitHub Sponsor](https://img.shields.io/badge/GitHub-Sponsor-pink.svg?style=for-the-badge)](https://github.com/sponsors/webwerkstatt)
 
 **Every donation helps us:**
