@@ -135,7 +135,7 @@ Cursor bewies, dass intelligentes Kontext-Management $400M+ Wert schafft. Wir na
 ## ⚡ **Schnellstart - Cache-Explosion Prevention JETZT!**
 
 ### **🚨 Installation (2 Minuten)**
-1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](./public/releases/community/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix) (11,7 MB)
+1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](./releases/beta/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix) (11,7 MB)
 2. **Installation**: VS Code öffnen → `Strg+Shift+P` → "Extensions: Install from VSIX..."
 3. **Aktivierung**: Extension aktiviert sich automatisch mit Cline
 4. **Sofort sparen**: Cache-Explosion Prevention beginnt sofort

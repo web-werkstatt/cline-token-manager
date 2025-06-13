@@ -173,7 +173,7 @@ Ctrl+Shift+P → "Cline Token Manager: Show Fix Instructions"
 ## ⚡ **Quick Start - Get Cache-Explosion Prevention NOW!**
 
 ### **🚨 Installation (2 minutes)**
-1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](./public/releases/community/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix) (11.7 MB)
+1. **Download**: [`cline-token-manager-beta-1.2.0-universal-ai-platform.vsix`](./releases/beta/cline-token-manager-beta-1.2.0-universal-ai-platform.vsix) (11.7 MB)
 2. **Install**: Open VS Code → `Ctrl+Shift+P` → "Extensions: Install from VSIX..."
 3. **Activate**: Extension activates automatically with Cline
 4. **Start Saving**: Immediate cache-explosion prevention begins
