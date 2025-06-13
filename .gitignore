@@ -1,118 +1,207 @@
-# AI Context Optimizer - .gitignore
-# Repository: https://github.com/web-werkstatt/ai-context-optimizer
+# =============================================================================
+# CLINE TOKEN MANAGER - ENTERPRISE IP PROTECTION
+# =============================================================================
+# 🚨 CRITICAL: NEVER commit enterprise IP to public repositories!
+# This .gitignore protects $700K+ ARR business value
 
-# ===========================================
-# VS Code Extension Build Artifacts
-# ===========================================
+# =============================================================================
+# 🔒 ENTERPRISE FOLDERS - Complete IP Protection
+# =============================================================================
+enterprise/
+*enterprise*
+*business*
+*licensing*
+*kubernetes*
+*private*
+
+# Specific Enterprise Repositories  
+cline-token-manager-enterprise/
+universal-ai-platform-business/
+kubernetes-enterprise/
+enterprise-license-core/
+
+# =============================================================================
+# 🔒 BUSINESS INTELLIGENCE - Market Advantage Protection  
+# =============================================================================
+*BUSINESS*
+*ENTERPRISE*
+*STRATEGY*
+*LICENSING*
+*PRICING*
+*SALES*
+*MARKET*
+*REVENUE*
+*COMPETITIVE*
+*UNIVERSAL*
+
+# Business Intelligence Files
+*business-intelligence*
+*market-advantage*
+*competitive-intelligence*
+*enterprise-licensing*
+*team-management*
+
+# =============================================================================
+# 🔒 SENSITIVE SOURCE CODE - Revolutionary Features
+# =============================================================================
+# Auto-Fix System (WORLD'S FIRST)
+src/cline-integration/cline-token-limit-detector.ts
+
+# Rule Injection System (REVOLUTIONARY)  
+src/core/custom-rules-manager.ts
+src/webview/rule-injection-panel.ts
+
+# Universal AI Platform (PROPRIETARY)
+src/api-interception/
+src/providers/cursor-killer.ts
+src/providers/copilot-bypass.ts
+
+# Enterprise Features
+src/enterprise/
+
+# =============================================================================
+# 🔒 B2B PACKAGES - $200K ARR Cline + $500K ARR Universal AI
+# =============================================================================
 *.vsix
+!public/releases/community/*.vsix
+!public/releases/stable/*.vsix
+
+# Enterprise Package Releases
+releases/enterprise-packages/
+enterprise/packages/
+
+# =============================================================================
+# 🔒 INFRASTRUCTURE & DEPLOYMENT
+# =============================================================================
+*kubernetes*
+*deployment*
+*namespace* 
+*gitea*
+*kubectl*
+*kind*
+*.yaml
+!public/**/*.yaml
+
+# Kubernetes Enterprise Infrastructure
+kubernetes-enterprise/
+enterprise/infrastructure/
+
+# =============================================================================
+# 🔒 DOCUMENTATION - Strategic & Internal
+# =============================================================================
+internal-docs/
+enterprise/business-intelligence/
+project-management/
+
+# Strategy Documents
+BUSINESS-*.md
+INVESTMENT-*.md
+MARKET-*.md
+TECHNICAL-ARCHITECTURE-*.md
+PRICING-*.md
+SALES-*.md
+
+# Internal Development  
+CLAUDE.md
+*CLAUDE*
+*internal*
+*INTERNAL*
+*backup*
+*BACKUP*
+
+# =============================================================================
+# 🛠️ DEVELOPMENT - Local Only
+# =============================================================================
+development/
+node_modules/
 out/
 dist/
-node_modules/
+build/
+.vscode-test/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# ===========================================
-# Development & Compilation
-# ===========================================
-.vscode-test/
-.vscode/settings.json
-.vscode/launch.json
-.vscode/extensions.json
 *.tsbuildinfo
 coverage/
 
-# ===========================================
-# Internal Documentation (NOT for public repo)
-# ===========================================
-internal-docs/
-docs/sprints/
-docs/analysis/
-archive/
-assets/
-development/
-
-# Business Strategy Documents
-BUSINESS-*.md
-INVESTMENT-*.md
-MARKET-*.md
-PAPERLESS-*.md
-TECHNICAL-ARCHITECTURE-*.md
-
-# Marketing & Community Materials  
-COMMUNITY-*.md
-REDDIT-*.md
-GITHUB-LAUNCH-*.md
-
-# Internal Development Notes
-CLAUDE.md
-BETA-LAUNCH-*.md
-SPRINT-*.md
-CORE-ENGINE-*.md
-PYTHON-GATEWAY-*.md
-FEEDBACK-*.md
-GITHUB-DISCUSSIONS-*.md
-
-# Experimental Features
-PYTHON-UNIVERSAL-*.md
-CURSOR-EXPERIENCE-*.md
-MVP-*.md
-PRODUCT-ROADMAP-*.md
-
-# ===========================================
-# Environment & Sensitive Information
-# ===========================================
-.env
-.env.*
+# =============================================================================
+# 🔒 SENSITIVE DATA
+# =============================================================================
+*secret*
+*password*
+*credential*
 *.key
+*token*
+.env*
 *.pem
+*.p12
+*.keystore
 config/local.json
 secrets/
 
-# ===========================================
-# OS & Editor Files
-# ===========================================
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-*~
-.swp
-.swo
+# =============================================================================
+# 🚫 NEVER COMMIT THESE PATTERNS
+# =============================================================================
+*enterprise*
+*private*
+*confidential*
+*proprietary*
 
-# ===========================================
-# Temporary Files
-# ===========================================
+# =============================================================================
+# 📂 ALLOW PUBLIC CONTENT ONLY
+# =============================================================================
+# Only allow specific public directories
+
+# Public Source Code
+!public/
+!public/src/
+!public/src/**
+!public/docs/
+!public/docs/**
+!public/assets/
+!public/assets/**
+
+# Public Releases
+!public/releases/community/
+!public/releases/community/**
+!public/releases/stable/
+!public/releases/stable/**
+
+# Community Beta Releases
+!releases/beta/
+!releases/beta/**
+
+# Public Configuration
+!public/README.md
+!public/package.json
+!public/tsconfig.json
+!public/LICENSE
+!public/webpack.config.js
+
+# =============================================================================
+# 🗑️ TEMPORARY & BUILD FILES
+# =============================================================================
 *.tmp
 *.temp
 .tmp/
 .cache/
 .temp/
+.DS_Store
+Thumbs.db
+*~
 
-# ===========================================
-# Website Development (Internal)
-# ===========================================
-aicontextoptimizer-com/
-clineoptimizer-com/
-
-# ===========================================
-# Allow Essential Public Documentation
-# ===========================================
-!README.md
-!README_DE.md
-!INSTALLATION-GUIDE.md
-!CHANGELOG.md
-!RELEASE-NOTES-v*.md
-!LICENSE
-!.github/
-
-# Allow Technical Documentation (User-Relevant)
-!CACHE-EXPLOSION-SOLUTION.md
-!PERFORMANCE-VALIDATION.md
-!TEST-REPORT.md
-!TOKEN-ESTIMATION-FIX.md
-!TOKEN-REDUCTION-MEASUREMENTS.md
+# =============================================================================
+# ⚠️ SECURITY NOTICE
+# =============================================================================
+# This .gitignore protects critical enterprise IP including:
+# - Revolutionary Auto-Fix algorithms ($200K ARR)
+# - Universal AI Platform business intelligence ($500K ARR)  
+# - Market advantage strategies and competitive intelligence
+# - Enterprise licensing systems and revenue models
+# - Kubernetes infrastructure and deployment configs
+# - Proprietary AI orchestration algorithms
+# 
+# TOTAL PROTECTED VALUE: $700K+ ARR potential
+# NEVER modify this file to expose enterprise content!
+# =============================================================================
