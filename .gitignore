@@ -149,35 +149,22 @@ secrets/
 *proprietary*
 
 # =============================================================================
-# 📂 ALLOW PUBLIC CONTENT ONLY
+# 📂 ALLOW ESSENTIAL FILES ONLY (USER-FOCUSED GITHUB)
 # =============================================================================
-# Only allow specific public directories
+# Only allow essential files for GitHub users
 
-# Public Source Code
-!public/
-!public/src/
-!public/src/**
-!public/docs/
-!public/docs/**
-!public/assets/
-!public/assets/**
-
-# Public Releases
-!public/releases/community/
-!public/releases/community/**
-!public/releases/stable/
-!public/releases/stable/**
+# Essential Documentation
+!README.md
+!README_DE.md
+!LICENSE
 
 # Community Beta Releases
 !releases/beta/
 !releases/beta/**
 
-# Public Configuration
-!public/README.md
-!public/package.json
-!public/tsconfig.json
-!public/LICENSE
-!public/webpack.config.js
+# Essential Assets (if needed)
+!assets/screenshots/
+!assets/diagrams/
 
 # =============================================================================
 # 🗑️ TEMPORARY & BUILD FILES
