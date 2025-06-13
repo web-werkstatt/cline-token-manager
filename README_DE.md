@@ -1,15 +1,24 @@
-# 🚀 Universelle AI Context Management Plattform
+# 🚀 Cline Token Manager - Der ultimative AI Context Optimizer
 
-> **🚨 DURCHBRUCH: Löst das $400M Cache-Explosion Problem**  
-> **🎯 Universal • Open Source • Kosten-Transparent**  
-> **🦄 Besser als Cursor: Funktioniert mit JEDEM AI-Tool**
+> **🚨 DURCHBRUCH: Weltweit erstes Auto-Fix für Cline Token Limits**  
+> **🎯 Echtzeit-Monitoring • Kosten-Transparent • Performance-Optimiert**  
+> **🏆 2 GitHub Sterne und steigend! Schließe dich der Revolution an!**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://marketplace.visualstudio.com/)
-[![Universal](https://img.shields.io/badge/Universal-AI%20Tools-green.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
-[![Cache Prevention](https://img.shields.io/badge/Cache-Explosion%20Prevention-red.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
+[![GitHub Stars](https://img.shields.io/github/stars/cline-optimized-project/cline-token-manager.svg)](https://github.com/cline-optimized-project/cline-token-manager/stargazers)
+[![Auto-Fix](https://img.shields.io/badge/Auto--Fix-Token%20Limits-red.svg)](https://github.com/cline-optimized-project/cline-token-manager)
 
 🇬🇧 **[English Version](README.md)** | 🇩🇪 **Deutsche Version**
+
+---
+
+## ☕ **Unterstütze dieses Projekt**
+
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg)](https://coff.ee/webwerkstatt)
+[![PayPal](https://img.shields.io/badge/PayPal-Spenden-blue.svg)](https://paypal.me/webwerwerkstatt)
+
+Liebst du Cline Token Manager? Hilf uns dabei, revolutionäre Features weiter zu entwickeln!
 
 ---
 
@@ -358,9 +367,10 @@ Die Extension funktioniert sofort mit intelligenten Standardwerten. Optionale Ei
 
 Wir sind aktuell in der Beta-Testing-Phase. Hilf uns beim Verbessern:
 
-- **GitHub Issues**: [Bugs/Features melden](https://github.com/web-werkstatt/ai-context-optimizer/issues)
+- **GitHub Issues**: [Bugs/Features melden](https://github.com/cline-optimized-project/cline-token-manager/issues)
 - **E-Mail**: support@web-werkstatt.at
 - **Diskussionen**: Nutze GitHub Discussions für Fragen
+- **⭐ Stern uns auf GitHub**: Hilf uns, mehr Entwickler zu erreichen!
 
 ## 🔮 **Universelle Plattform Roadmap**
 
@@ -399,7 +409,9 @@ Beiträge sind willkommen! Bitte lies unsere Contributing-Guidelines und reiche 
 ## 📞 **Support**
 
 - **E-Mail**: support@web-werkstatt.at
-- **GitHub Issues**: [Issue erstellen](https://github.com/web-werkstatt/ai-context-optimizer/issues)
+- **GitHub Issues**: [Issue erstellen](https://github.com/cline-optimized-project/cline-token-manager/issues)
+- **⭐ Stern uns**: [Gib uns einen Stern auf GitHub](https://github.com/cline-optimized-project/cline-token-manager) wenn du das nützlich findest!
+- **☕ Unterstützung**: [Kauf mir einen Kaffee](https://coff.ee/webwerkstatt) um weitere Durchbruch-Features zu finanzieren
 
 ---
 
@@ -423,6 +435,26 @@ Cursor's Erfolg beweist, dass intelligentes Kontext-Management bedeutenden Wert 
 ---
 
 **🚀 Jetzt downloaden - Schließe dich der Revolution gegen teures, ineffizientes AI-Coding an!**
+
+---
+
+## ☕ **Unterstütze unsere Mission**
+
+Wenn Cline Token Manager dir Geld spart und deinen AI-Coding-Workflow verbessert, unterstütze bitte unsere Entwicklung:
+
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg?style=for-the-badge)](https://coff.ee/webwerkstatt)
+[![PayPal](https://img.shields.io/badge/PayPal-Spenden-blue.svg?style=for-the-badge)](https://paypal.me/webwerwerkstatt)
+[![GitHub Sponsor](https://img.shields.io/badge/GitHub-Sponsor-pink.svg?style=for-the-badge)](https://github.com/sponsors/webwerkstatt)
+
+**Jede Spende hilft uns:**
+- 🚀 Mehr Durchbruch-Features zu entwickeln
+- 🔧 Bugs zu beheben und Performance zu verbessern  
+- 📚 Bessere Dokumentation zu erstellen
+- 🌍 Die globale Entwickler-Community zu unterstützen
+
+---
+
+**⭐ Vergiss nicht, uns auf GitHub zu sternen!** ⭐
 
 *Mit ❤️ gebaut von Joseph Kisler - Webwerkstatt*  
 *Macht AI-Coding zugänglich und bezahlbar für jeden Entwickler weltweit* 🌍

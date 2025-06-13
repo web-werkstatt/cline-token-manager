@@ -1,15 +1,24 @@
-# 🚀 Universal AI Context Management Platform
+# 🚀 Cline Token Manager - The Ultimate AI Context Optimizer
 
-> **🚨 BREAKTHROUGH: Solves the $400M Cache-Explosion Problem**  
-> **🎯 Universal • Open Source • Cost-Transparent**  
-> **🦄 Better than Cursor: Works with ANY AI Tool**
+> **🚨 BREAKTHROUGH: World's First Auto-Fix for Cline Token Limits**  
+> **🎯 Real-time Monitoring • Cost Transparent • Performance Optimized**  
+> **🏆 2 GitHub Stars and growing! Join the revolution!**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://marketplace.visualstudio.com/)
-[![Universal](https://img.shields.io/badge/Universal-AI%20Tools-green.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
-[![Cache Prevention](https://img.shields.io/badge/Cache-Explosion%20Prevention-red.svg)](https://github.com/web-werkstatt/ai-context-optimizer)
+[![GitHub Stars](https://img.shields.io/github/stars/cline-optimized-project/cline-token-manager.svg)](https://github.com/cline-optimized-project/cline-token-manager/stargazers)
+[![Auto-Fix](https://img.shields.io/badge/Auto--Fix-Token%20Limits-red.svg)](https://github.com/cline-optimized-project/cline-token-manager)
 
 🇬🇧 **English Version** | 🇩🇪 **[Deutsche Version](README_DE.md)**
+
+---
+
+## ☕ **Support This Project**
+
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg)](https://coff.ee/webwerkstatt)
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg)](https://paypal.me/webwerwerkstatt)
+
+Love using Cline Token Manager? Help us keep developing revolutionary features!
 
 ---
 
@@ -420,9 +429,10 @@ The extension works out of the box with smart defaults. Optional settings:
 
 We're currently in beta testing phase. Help us improve:
 
-- **GitHub Issues**: [Report bugs/features](https://github.com/web-werkstatt/ai-context-optimizer/issues)
+- **GitHub Issues**: [Report bugs/features](https://github.com/cline-optimized-project/cline-token-manager/issues)
 - **Email**: support@web-werkstatt.at
 - **Discussions**: Use GitHub Discussions for questions
+- **⭐ Star us on GitHub**: Help us reach more developers!
 
 ## 🔮 **Universal Platform Roadmap**
 
@@ -461,7 +471,9 @@ Contributions are welcome! Please read our contributing guidelines and submit pu
 ## 📞 **Support**
 
 - **Email**: support@web-werkstatt.at
-- **GitHub Issues**: [Create an issue](https://github.com/web-werkstatt/ai-context-optimizer/issues)
+- **GitHub Issues**: [Create an issue](https://github.com/cline-optimized-project/cline-token-manager/issues)
+- **⭐ Star us**: [Give us a star on GitHub](https://github.com/cline-optimized-project/cline-token-manager) if you find this useful!
+- **☕ Support**: [Buy me a coffee](https://coff.ee/webwerkstatt) to fuel more breakthrough features
 
 ---
 
@@ -485,6 +497,26 @@ Cursor's success proves that intelligent context management creates significant 
 ---
 
 **🚀 Download now - Join the revolution against expensive, inefficient AI coding!**
+
+---
+
+## ☕ **Support Our Mission**
+
+If Cline Token Manager saves you money and improves your AI coding workflow, consider supporting our development:
+
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-☕-orange.svg?style=for-the-badge)](https://coff.ee/webwerkstatt)
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg?style=for-the-badge)](https://paypal.me/webwerwerkstatt)
+[![GitHub Sponsor](https://img.shields.io/badge/GitHub-Sponsor-pink.svg?style=for-the-badge)](https://github.com/sponsors/webwerkstatt)
+
+**Every donation helps us:**
+- 🚀 Develop more breakthrough features
+- 🔧 Fix bugs and improve performance  
+- 📚 Create better documentation
+- 🌍 Support the global developer community
+
+---
+
+**⭐ Don't forget to star us on GitHub!** ⭐
 
 *Built with ❤️ by Joseph Kisler - Webwerkstatt*  
 *Making AI coding accessible and affordable for every developer worldwide* 🌍
